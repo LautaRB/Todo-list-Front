@@ -3,7 +3,7 @@ import Footer from '../Components/footer.tsx';
 
 function BaseLayout() {
   return (
-    <div className="font-family: system-ui, sans-serif min-h-screen flex flex-col bg-black">
+    <div className="font-family: system-ui min-h-screen flex flex-col bg-white">
       <header className="w-full py-4">
         <Navbar />
       </header>
