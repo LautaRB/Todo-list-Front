@@ -1,5 +1,5 @@
-import Navbar from '../Components/Navbar/Navbar.tsx';
-import Footer from '../Components/Footer.tsx';
+import { Navbar } from '../Components';
+import { Footer } from '../Components';
 
 function BaseLayout() {
 	return (
