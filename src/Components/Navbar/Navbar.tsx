@@ -1,6 +1,6 @@
-import NavLink from './NavLink';
+import { NavLink } from './NavLink';
 
-function Navbar() {
+export const Navbar = () => {
 	return (
 		<nav className="font-sour-gummy fixed top-0 left-0 w-full flex justify-between space-x-6 py-4 z-50">
 			<div className="pl-6">
@@ -21,5 +21,4 @@ function Navbar() {
 			</div>
 		</nav>
 	);
-}
-export default Navbar;
+};
