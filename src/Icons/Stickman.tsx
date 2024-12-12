@@ -1,15 +1,27 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1170.000000pt" height="1143.000000pt" viewBox="0 0 1170.000000 1143.000000"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by potrace 1.16, written by Peter Selinger 2001-2019
-</metadata>
-<g transform="translate(0.000000,1143.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M4366 9954 c-294 -58 -509 -185 -679 -399 -103 -131 -156 -236 -209
+interface Props {
+	className?: string;
+}
+
+export const Stickman: React.FC<Props> = ({ className }) => {
+	return (
+		<svg
+			version="1.0"
+			width="1170.000000pt"
+			height="1143.000000pt"
+			viewBox="0 0 1170.000000 1143.000000"
+			preserveAspectRatio="xMidYMid meet"
+			className={className}
+		>
+			<metadata>
+				Created by potrace 1.16, written by Peter Selinger 2001-2019
+			</metadata>
+			<g
+				transform="translate(0.000000,1143.000000) scale(0.100000,-0.100000)"
+				fill="currentColor"
+				stroke="none"
+			>
+				<path
+					d="M4366 9954 c-294 -58 -509 -185 -679 -399 -103 -131 -156 -236 -209
 -420 -20 -70 -23 -102 -22 -250 0 -267 43 -413 180 -619 67 -101 127 -165 229
 -245 44 -35 81 -65 83 -66 2 -2 -31 -51 -73 -110 -82 -114 -160 -235 -192
 -300 -11 -22 -38 -74 -61 -115 -61 -112 -203 -454 -261 -630 -58 -174 -132
@@ -103,6 +115,9 @@ l-63 -61 -48 81 c-27 45 -81 141 -120 212 -39 72 -95 174 -124 227 -29 53 -75
 310 97 99 50 158 97 277 225 70 74 125 123 160 143 54 29 156 57 173 47 5 -3
 6 -97 2 -226z m-30 -788 c-4 -79 -9 -206 -11 -282 -3 -77 -7 -141 -8 -142 -5
 -5 -495 281 -491 288 5 7 44 29 276 153 75 41 154 85 175 99 66 43 66 43 59
--116z"/>
-</g>
-</svg>
+-116z"
+				/>
+			</g>
+		</svg>
+	);
+};
