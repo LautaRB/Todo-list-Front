@@ -11,6 +11,7 @@ export default defineConfig({
 			'@icons': '/src/Icons',
 			'@utils': '/src/Utils',
 			'@assets': '/src/Assets',
+			'@pages': '/src/Pages',
 		},
 	},
 });

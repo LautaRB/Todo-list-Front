@@ -29,7 +29,8 @@
 			"@layouts/*": ["src/Layouts/*"],
 			"@icons/*": ["src/Icons/*"],
 			"@utils/*": ["src/Utils/*"],
-			"@assets/*": ["src/Assets/*"]
+			"@assets/*": ["src/Assets/*"],
+			"@pages/*": ["src/Pages/*"]
 		}
 	},
 	"include": ["src"]

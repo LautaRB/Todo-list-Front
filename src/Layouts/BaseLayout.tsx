@@ -1,15 +1,17 @@
 import { Navbar } from '@components/Navbar/Navbar';
 import { Footer } from '@components/Footer/Footer';
 
-export const BaseLayout = () => {
+interface BaseLayoutProps {
+	children: React.ReactNode;
+}
+
+export const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 	return (
-		<div className="font-family: system-ui min-h-screen flex flex-col mx-0 my-auto box-border bg-yellow-300">
-			<header className="w-full">
+		<div className="font-sans min-h-screen flex flex-col bg-gradient-to-br from-yellow-100 via-amber-100 to-green-100">
+			<header className="w-full bg-yellow-200 shadow-md">
 				<Navbar />
 			</header>
-			<main className="flex-grow container mx-auto ">
-				{/*contenido de la página */}
-			</main>
+			<main className="flex-grow container mx-auto px-4 py-8">{children}</main>
 			<Footer />
 		</div>
 	);
