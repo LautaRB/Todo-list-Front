@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="grid grid-cols-2 justify-between top-0 left-0 w-full z-50">
 			<div className="flex pl-9">
 				<StickmanIcon className="relative top-3.5  h-[77px] w-auto text-black"></StickmanIcon>
-				<NavLink className="self-center text-2xl" href="#">
+				<NavLink className="self-center !text-2xl" href="#">
 					Todografo
 				</NavLink>
 			</div>

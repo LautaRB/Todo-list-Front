@@ -1,48 +1,18 @@
-import { CheckCircleIcon, PencilIcon } from '@heroicons/react/24/solid';
-import { useEffect } from 'react';
-
-const StickyNote: React.FC<{
-	title: string;
-	children: React.ReactNode;
-	color?: string;
-}> = ({ title, children, color = 'bg-yellow-100' }) => (
-	<div className={`sticky-note ${color}`}>
-		<h3 className="text-lg font-bold mb-2 font-handwritten">{title}</h3>
-		<PencilIcon className="w-4 h-4 absolute top-2 right-2 text-amber-600" />
-		<div className="font-handwritten">{children}</div>
-	</div>
-);
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import { StickyNote } from '@components/StickyNote';
 
 export const LandingPage = () => {
-	useEffect(() => {
-		const handleHashChange = () => {
-			const hash = window.location.hash;
-			if (hash) {
-				const element = document.querySelector(hash);
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				}
-			}
-		};
-
-		handleHashChange();
-		window.addEventListener('hashchange', handleHashChange);
-		return () => window.removeEventListener('hashchange', handleHashChange);
-	}, []);
-
 	return (
 		<div className="space-y-16">
 			{/* Hero Section */}
 			<section className="text-center">
-				<h1 className="text-5xl font-bold mb-4 text-amber-800 font-marker">
+				<h1 className="text-5xl mb-4 text-amber-800 font-heading">
 					Bienvenido a Todografo
 				</h1>
 				<p className="text-xl mb-8 text-amber-700 font-handwritten">
 					La mejor manera de organizar tus tareas y aumentar tu productividad
 				</p>
-				<button className="btn-primary font-handwritten">
-					Comienza gratis
-				</button>
+				<button className="btn-primary">Comienza gratis</button>
 			</section>
 
 			{/* Features Section */}
@@ -50,7 +20,7 @@ export const LandingPage = () => {
 				id="features"
 				className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-8"
 			>
-				<h2 className="text-3xl font-bold mb-6 text-center text-amber-800 font-marker">
+				<h2 className="text-3xl mb-6 text-center text-amber-800 font-heading">
 					Características
 				</h2>
 				<div className="grid md:grid-cols-3 gap-8">
@@ -80,7 +50,7 @@ export const LandingPage = () => {
 				id="how-it-works"
 				className="bg-gradient-to-br from-yellow-100 via-amber-100 to-green-100 rounded-lg p-8 shadow-inner"
 			>
-				<h2 className="text-3xl font-bold mb-6 text-center text-amber-800 font-marker">
+				<h2 className="text-3xl font-bold mb-6 text-center text-amber-800 font-heading">
 					Cómo funciona
 				</h2>
 				<div className="grid md:grid-cols-2 gap-8">
@@ -104,7 +74,7 @@ export const LandingPage = () => {
 				id="pricing"
 				className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-8"
 			>
-				<h2 className="text-3xl font-bold mb-6 text-center text-amber-800 font-marker">
+				<h2 className="text-3xl font-bold mb-6 text-center text-amber-800 font-heading">
 					Planes
 				</h2>
 				<div className="grid md:grid-cols-3 gap-8">

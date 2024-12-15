@@ -7,7 +7,7 @@ interface BaseLayoutProps {
 
 export const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 	return (
-		<div className="font-sans min-h-screen flex flex-col bg-gradient-to-br from-yellow-100 via-amber-100 to-green-100">
+		<div className="min-h-screen scroll-smooth flex flex-col container-bg">
 			<header className="w-full bg-yellow-200 shadow-md">
 				<Navbar />
 			</header>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;700&family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Short+Stack&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -12,25 +12,47 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.font-marker {
-	font-family: 'Permanent Marker', cursive;
+.container-bg {
+	background-color: #fbab7e;
+	background-image: linear-gradient(0deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+.font-heading {
+	font-family: 'Comic Sans MS', cursive;
+	font-weight: 500;
 }
 
 .font-handwritten {
 	font-family: 'Short Stack', cursive;
 }
 
-@layer components {
-	.sticky-note {
-		@apply bg-yellow-100 p-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:rotate-1 relative overflow-hidden;
-	}
+.sticky-note {
+	@apply p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1 relative overflow-hidden;
+}
 
-	.sticky-note::before {
-		content: '';
-		@apply absolute top-0 right-0 w-0 h-0 border-t-[20px] border-r-[20px] border-t-yellow-200 border-r-transparent;
-	}
-
-	.btn-primary {
-		@apply bg-gradient-to-r from-yellow-400 via-amber-500 to-green-400 text-white font-bold py-2 px-4 rounded-full hover:from-yellow-500 hover:via-amber-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-md;
-	}
+.sticky-note:before,
+.sticky-note:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.sticky-note:before {
+	@apply shadow-xl;
+	border-top: solid 10px #fff;
+	border-right: solid 10px #fff;
+	border-left: solid 10px transparent;
+	border-bottom: solid 10px transparent;
+}
+.sticky-note:after {
+	@apply rounded-sm;
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+	border-bottom: solid 10px #fef3c7;
+	border-left: solid 10px #fef3c7;
+	border-right: solid 10px transparent;
+	border-top: solid 10px transparent;
+}
+.btn-primary {
+	@apply bg-gradient-to-r from-yellow-400 via-amber-500 to-green-400 text-white font-bold py-2 px-4 rounded-full hover:from-yellow-500 hover:via-amber-600 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-md;
 }
