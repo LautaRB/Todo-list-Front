@@ -3,16 +3,23 @@ interface Props {
 	children: React.ReactNode;
 	color?: string;
 	className?: string;
+	animation?: boolean;
 }
+
+const animationStyle =
+	'transform transition-all duration-300 hover:scale-105 hover:rotate-1';
 
 export const StickyNote: React.FC<Props> = ({
 	title,
 	children,
 	color = 'yellow',
 	className = '',
+	animation = false,
 }) => (
 	<div
-		className={`sticky-note bg-${color}-100 after:border-b-${color}-100 after:border-l-${color}-100 ${className}`}
+		className={`${
+			animation ? animationStyle : ''
+		} sticky-note bg-${color}-100 after:border-b-${color}-100 after:border-l-${color}-100 ${className}`}
 	>
 		{title && <h3 className="text-lg font-bold mb-2">{title}</h3>}
 		<div className="font-handwritten">{children}</div>

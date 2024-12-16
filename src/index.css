@@ -29,7 +29,7 @@ nav {
 
 @layer components {
 	.sticky-note {
-		@apply p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1 relative overflow-hidden;
+		@apply p-6 rounded-lg shadow-lg relative overflow-hidden;
 	}
 
 	.sticky-note:before,
@@ -168,7 +168,7 @@ nav {
 		background-image: radial-gradient(
 			ellipse 100vw 350px,
 			rgba(240, 45, 45, 0.23),
-			#ffffff
+			#f8fafc
 		);
 	}
 
@@ -176,7 +176,15 @@ nav {
 		background-image: radial-gradient(
 			ellipse 100vw 350px,
 			rgba(29, 133, 238, 0.23),
-			#ffffff
+			#f8fafc
+		);
+	}
+
+	.background-login {
+		background-image: radial-gradient(
+			ellipse 100vw 350px,
+			rgba(224, 238, 29, 0.23),
+			#f8fafc
 		);
 	}
 	.font-heading {
