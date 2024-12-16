@@ -55,11 +55,37 @@ nav {
 		border-right: solid 10px transparent;
 		border-top: solid 10px transparent;
 	}
-	.btn-primary {
+
+	.btn-blue,
+	.btn-red,
+	.btn-green,
+	.btn-yellow,
+	.btn-black {
 		font-size: 16px;
 		padding: 8px 20px;
 		font-weight: 600;
+		cursor: pointer;
+		text-align: center;
+		border: none;
 		color: #fff;
+		background-size: 300% 100%;
+		border-radius: 5px;
+		-o-transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.btn-blue:is(:hover, :focus),
+	.btn-red:is(:hover, :focus),
+	.btn-green:is(:hover, :focus),
+	.btn-yellow:is(:hover, :focus),
+	.btn-black:is(:hover, :focus) {
+		background-position: 100% 0;
+		-o-transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+	}
+	.btn-blue {
 		background-image: linear-gradient(
 			to right,
 			#25aae1,
@@ -68,21 +94,51 @@ nav {
 			#3f86ed
 		);
 		box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-		cursor: pointer;
-		text-align: center;
-		border: none;
-		background-size: 300% 100%;
-		border-radius: 5px;
-		-o-transition: all 0.4s ease-in-out;
-		-webkit-transition: all 0.4s ease-in-out;
-		transition: all 0.4s ease-in-out;
 	}
 
-	.btn-primary:hover {
-		background-position: 100% 0;
-		-o-transition: all 0.4s ease-in-out;
-		-webkit-transition: all 0.4s ease-in-out;
-		transition: all 0.4s ease-in-out;
+	.btn-red {
+		background-image: linear-gradient(
+			to right,
+			#ef5f56,
+			#c85f7b,
+			#f75373,
+			#eb456b
+		);
+		box-shadow: 0 4px 15px 0 rgba(255, 95, 86, 0.75);
+	}
+
+	.btn-green {
+		background-image: linear-gradient(
+			to right,
+			#25aae1,
+			#40e495,
+			#30dd8a,
+			#2bb673
+		);
+		box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+	}
+
+	.btn-yellow {
+		background-image: linear-gradient(
+			to right,
+			#e39c12,
+			#d6af22,
+			#e1bf0f,
+			#e39b00
+		);
+		color: #fff;
+		box-shadow: 0 4px 15px 0 rgba(241, 196, 15, 0.75);
+	}
+
+	.btn-black {
+		background-image: linear-gradient(
+			to right,
+			#29323c,
+			#485563,
+			#2b5876,
+			#4e4376
+		);
+		box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 	}
 }
 
@@ -108,7 +164,15 @@ nav {
 		@apply text-3xl mb-8 text-center font-heading;
 	}
 
-	.background {
+	.background-error {
+		background-image: radial-gradient(
+			ellipse 100vw 350px,
+			rgba(240, 45, 45, 0.23),
+			#ffffff
+		);
+	}
+
+	.background-main {
 		background-image: radial-gradient(
 			ellipse 100vw 350px,
 			rgba(29, 133, 238, 0.23),
