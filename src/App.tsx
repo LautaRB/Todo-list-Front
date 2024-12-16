@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { BaseLayout } from '@layouts/BaseLayout';
-import { ErrorLayout } from '@layouts/ErrorLayout';
-import { LandingPage } from '@pages/LandingPage';
-import { ErrorPage } from '@pages/ErrorPage';
+import { Base as BaseLayout } from '@layouts/Landing';
+import { Error as ErrorLayout } from '@layouts/Error';
+import { Landing as LandingPage } from '@pages/Landing';
+import { Error as ErrorPage } from '@pages/Error';
+import { Login as LoginLayout } from '@layouts/Login';
+import { Login as LoginPage } from '@pages/Login';
 
 export const App = () => {
 	return (
@@ -21,6 +23,14 @@ export const App = () => {
 					<ErrorLayout>
 						<ErrorPage />
 					</ErrorLayout>
+				}
+			/>
+			<Route
+				path="/login"
+				element={
+					<LoginLayout>
+						<LoginPage />
+					</LoginLayout>
 				}
 			/>
 		</Routes>

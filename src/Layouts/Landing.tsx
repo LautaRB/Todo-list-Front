@@ -1,11 +1,11 @@
 import { Navbar } from '@components/Navbar/Navbar';
 import { Footer } from '@components/Footer/Footer';
 
-interface BaseLayoutProps {
+interface Props {
 	children: React.ReactNode;
 }
 
-export const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
+export const Base: React.FC<Props> = ({ children }) => {
 	return (
 		<div className="min-h-screen">
 			<header className="w-full z-10 fixed top-0 bg-opacity-50 backdrop-filter backdrop-blur-lg bg-yellow-200 shadow-md">

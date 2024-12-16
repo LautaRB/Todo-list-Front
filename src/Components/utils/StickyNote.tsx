@@ -1,9 +1,16 @@
-export const StickyNote: React.FC<{
+interface Props {
 	title?: string;
 	children: React.ReactNode;
 	color?: string;
 	className?: string;
-}> = ({ title, children, color = 'yellow', className = '' }) => (
+}
+
+export const StickyNote: React.FC<Props> = ({
+	title,
+	children,
+	color = 'yellow',
+	className = '',
+}) => (
 	<div
 		className={`sticky-note bg-${color}-100 after:border-b-${color}-100 after:border-l-${color}-100 ${className}`}
 	>
