@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 interface Props {
 	children: React.ReactNode;
 	href: string;
@@ -7,11 +5,11 @@ interface Props {
 
 export const NavLink: React.FC<Props> = ({ children, href }) => {
 	return (
-		<Link
+		<a
 			className={`font-heading cursor-pointer text-xl hover:text-blue-600 transition-colors duration-300`}
-			to={href}
+			href={href}
 		>
 			{children}
-		</Link>
+		</a>
 	);
 };
