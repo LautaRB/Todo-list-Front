@@ -1,12 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { Base as BaseLayout } from '@layouts/Landing';
-import { Error as ErrorLayout } from '@layouts/Error';
+import { Landing as LandingLayout } from '@layouts/Landing';
 import { Landing as LandingPage } from '@pages/Landing';
 import { Error as ErrorPage } from '@pages/Error';
-import { Login as LoginLayout } from '@layouts/Login';
 import { Login as LoginPage } from '@pages/Login';
-import { Register as RegisterLayout } from '@layouts/Register';
 import { Register as RegisterPage } from '@pages/Register';
+import { Base as BaseLayout } from '@layouts/Base';
 
 export const App = () => {
 	return (
@@ -14,33 +12,33 @@ export const App = () => {
 			<Route
 				index
 				element={
-					<BaseLayout>
+					<LandingLayout>
 						<LandingPage />
-					</BaseLayout>
+					</LandingLayout>
 				}
 			/>
 			<Route
 				path="*"
 				element={
-					<ErrorLayout>
+					<BaseLayout background="error">
 						<ErrorPage />
-					</ErrorLayout>
+					</BaseLayout>
 				}
 			/>
 			<Route
 				path="/login"
 				element={
-					<LoginLayout>
+					<BaseLayout background="login">
 						<LoginPage />
-					</LoginLayout>
+					</BaseLayout>
 				}
 			/>
 			<Route
 				path="/register"
 				element={
-					<RegisterLayout>
+					<BaseLayout background="login">
 						<RegisterPage />
-					</RegisterLayout>
+					</BaseLayout>
 				}
 			/>
 		</Routes>
