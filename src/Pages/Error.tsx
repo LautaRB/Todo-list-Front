@@ -7,7 +7,8 @@ export const Error = () => {
 				<StickyNote color="yellow">
 					<div className="flex flex-col items-center justify-center gap-7">
 						<h1 className="text-5xl font-bold font-heading text-red-400 text-center">
-							404 <span className="text-3xl relative bottom-2">:(</span>
+							404
+							<p className="text-3xl relative">La página que buscas no existe :(</p>
 						</h1>
 						<a href="/" className="btn-red font-handwritten">
 							Volver al inicio
