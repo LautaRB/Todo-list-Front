@@ -5,6 +5,8 @@ import { Landing as LandingPage } from '@pages/Landing';
 import { Error as ErrorPage } from '@pages/Error';
 import { Login as LoginLayout } from '@layouts/Login';
 import { Login as LoginPage } from '@pages/Login';
+import { Register as RegisterLayout } from '@layouts/Register';
+import { Register as RegisterPage } from '@pages/Register';
 
 export const App = () => {
 	return (
@@ -31,6 +33,14 @@ export const App = () => {
 					<LoginLayout>
 						<LoginPage />
 					</LoginLayout>
+				}
+			/>
+			<Route
+				path="/register"
+				element={
+					<RegisterLayout>
+						<RegisterPage />
+					</RegisterLayout>
 				}
 			/>
 		</Routes>
