@@ -26,6 +26,14 @@ body {
 		z-index: -1;
 	}
 
+	.section-container {
+		@apply bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-8;
+	}
+
+	.subtitle {
+		@apply text-3xl mb-8 text-center font-heading;
+	}
+
 	.background {
 		background-image: radial-gradient(
 			ellipse 100vw 350px,
