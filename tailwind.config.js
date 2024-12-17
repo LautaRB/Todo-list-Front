@@ -27,6 +27,9 @@ export default {
 		'bg-indigo-100',
 		'after:border-b-indigo-100',
 		'after:border-l-indigo-100',
+		'background-main',
+		'background-error',
+		'background-login',
 	],
 
 	theme: {
