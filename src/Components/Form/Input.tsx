@@ -1,21 +1,26 @@
-import { Control, Controller, FieldError } from 'react-hook-form';
-import { SignFormData } from '@schemas/signForm';
+import {
+	Control,
+	Controller,
+	FieldError,
+	FieldValues,
+	Path,
+} from 'react-hook-form';
 
-interface Props {
-	name: keyof SignFormData;
-	control: Control<SignFormData>;
+interface Props<T extends FieldValues> {
+	name: Path<T>;
+	control: Control<T>;
 	type?: string;
 	placeholder?: string;
 	error?: FieldError;
 }
 
-export const Input: React.FC<Props> = ({
+export const Input = <T extends FieldValues>({
 	name,
 	control,
-	type,
+	type = 'text',
 	placeholder,
 	error,
-}) => {
+}: Props<T>) => {
 	return (
 		<div className="form-group">
 			<Controller
@@ -23,7 +28,7 @@ export const Input: React.FC<Props> = ({
 				control={control}
 				render={({ field }) => (
 					<input
-						id={name}
+						id={name as string}
 						type={type}
 						placeholder={placeholder}
 						{...field}

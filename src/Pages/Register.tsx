@@ -2,19 +2,19 @@ import { Input } from '@components/Form/Input';
 import { FormContainer } from '@components/Form/FormContainer';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { signUpSchema, SignFormData } from '@schemas/signForm';
+import { signUpSchema, SignUpData } from '@schemas/signForm';
 
 export const Register = () => {
 	const {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<SignFormData>({
+	} = useForm<SignUpData>({
 		resolver: zodResolver(signUpSchema),
 		mode: 'onBlur',
 	});
 
-	const onSubmit: SubmitHandler<SignFormData> = (data) => {
+	const onSubmit: SubmitHandler<SignUpData> = (data) => {
 		console.log(data);
 	};
 
