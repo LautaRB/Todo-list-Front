@@ -12,14 +12,8 @@ export const Stickman: React.FC<Props> = ({ className }) => {
 			preserveAspectRatio="xMidYMid meet"
 			className={className}
 		>
-			<metadata>
-				Created by potrace 1.16, written by Peter Selinger 2001-2019
-			</metadata>
-			<g
-				transform="translate(0.000000,1143.000000) scale(0.100000,-0.100000)"
-				fill="currentColor"
-				stroke="none"
-			>
+			<metadata>Created by potrace 1.16, written by Peter Selinger 2001-2019</metadata>
+			<g transform="translate(0.000000,1143.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
 				<path
 					d="M4366 9954 c-294 -58 -509 -185 -679 -399 -103 -131 -156 -236 -209
 -420 -20 -70 -23 -102 -22 -250 0 -267 43 -413 180 -619 67 -101 127 -165 229

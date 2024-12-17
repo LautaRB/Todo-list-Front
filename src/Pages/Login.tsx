@@ -26,20 +26,8 @@ export const Login = () => {
 		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
 			<FormContainer title="Inicio de Sesión">
 				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
-					<Input
-						name="email"
-						type="email"
-						placeholder="Email"
-						control={control}
-						error={errors.email}
-					/>
-					<Input
-						name="password"
-						type="password"
-						placeholder="Contraseña"
-						control={control}
-						error={errors.password}
-					/>
+					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
+					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
 					<button type="submit" className="btn-green">
 						Iniciar Sesión
 					</button>

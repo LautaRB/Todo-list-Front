@@ -19,9 +19,8 @@ nav {
 @layer base {
 	body {
 		margin: 0;
-		font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-			'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-			'Helvetica Neue', sans-serif;
+		font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+			'Droid Sans', 'Helvetica Neue', sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -86,58 +85,28 @@ nav {
 		transition: all 0.4s ease-in-out;
 	}
 	.btn-blue {
-		background-image: linear-gradient(
-			to right,
-			#25aae1,
-			#4481eb,
-			#04befe,
-			#3f86ed
-		);
+		background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
 		box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 	}
 
 	.btn-red {
-		background-image: linear-gradient(
-			to right,
-			#ef5f56,
-			#c85f7b,
-			#f75373,
-			#eb456b
-		);
+		background-image: linear-gradient(to right, #ef5f56, #c85f7b, #f75373, #eb456b);
 		box-shadow: 0 4px 15px 0 rgba(255, 95, 86, 0.75);
 	}
 
 	.btn-green {
-		background-image: linear-gradient(
-			to right,
-			#25aae1,
-			#40e495,
-			#30dd8a,
-			#2bb673
-		);
+		background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
 		box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 	}
 
 	.btn-yellow {
-		background-image: linear-gradient(
-			to right,
-			#e39c12,
-			#d6af22,
-			#e1bf0f,
-			#e39b00
-		);
+		background-image: linear-gradient(to right, #e39c12, #d6af22, #e1bf0f, #e39b00);
 		color: #fff;
 		box-shadow: 0 4px 15px 0 rgba(241, 196, 15, 0.75);
 	}
 
 	.btn-black {
-		background-image: linear-gradient(
-			to right,
-			#29323c,
-			#485563,
-			#2b5876,
-			#4e4376
-		);
+		background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
 		box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 	}
 }
@@ -165,27 +134,15 @@ nav {
 	}
 
 	.background-error {
-		background-image: radial-gradient(
-			ellipse 100vw 350px,
-			rgba(240, 45, 45, 0.23),
-			#f8fafc
-		);
+		background-image: radial-gradient(ellipse 100vw 350px, rgba(240, 45, 45, 0.23), #f8fafc);
 	}
 
 	.background-main {
-		background-image: radial-gradient(
-			ellipse 100vw 350px,
-			rgba(29, 133, 238, 0.23),
-			#f8fafc
-		);
+		background-image: radial-gradient(ellipse 100vw 350px, rgba(29, 133, 238, 0.23), #f8fafc);
 	}
 
 	.background-login {
-		background-image: radial-gradient(
-			ellipse 100vw 350px,
-			rgba(224, 238, 29, 0.23),
-			#f8fafc
-		);
+		background-image: radial-gradient(ellipse 100vw 350px, rgba(224, 238, 29, 0.23), #f8fafc);
 	}
 	.font-heading {
 		font-family: 'Comic Sans MS', cursive;

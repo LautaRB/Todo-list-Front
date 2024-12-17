@@ -6,8 +6,7 @@ interface Props {
 	animation?: boolean;
 }
 
-const animationStyle =
-	'transform transition-all duration-300 hover:scale-105 hover:rotate-1';
+const animationStyle = 'transform transition-all duration-300 hover:scale-105 hover:rotate-1';
 
 export const StickyNote: React.FC<Props> = ({
 	title,

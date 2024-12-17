@@ -27,32 +27,11 @@ export const Register = () => {
 	return (
 		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
 			<FormContainer title="Registro">
-				<form
-					onSubmit={handleSubmit(onSubmit)}
-					className="flex flex-col items-center justify-center gap-7"
-				>
+				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-7">
 					<div className="flex flex-col gap-2">
-						<Input
-							name="name"
-							type="text"
-							placeholder="Nombre"
-							control={control}
-							error={errors.name}
-						/>
-						<Input
-							name="email"
-							type="email"
-							placeholder="Email"
-							control={control}
-							error={errors.email}
-						/>
-						<Input
-							name="password"
-							type="password"
-							placeholder="Contraseña"
-							control={control}
-							error={errors.password}
-						/>
+						<Input name="name" type="text" placeholder="Nombre" control={control} error={errors.name} />
+						<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
+						<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
 						<Input
 							name="confirmPassword"
 							type="password"
