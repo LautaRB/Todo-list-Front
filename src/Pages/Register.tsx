@@ -12,6 +12,12 @@ export const Register = () => {
 	} = useForm<SignUpData>({
 		resolver: zodResolver(signUpSchema),
 		mode: 'onBlur',
+		defaultValues: {
+			name: '',
+			email: '',
+			password: '',
+			confirmPassword: '',
+		},
 	});
 
 	const onSubmit: SubmitHandler<SignUpData> = (data) => {

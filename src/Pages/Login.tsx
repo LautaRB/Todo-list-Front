@@ -12,6 +12,10 @@ export const Login = () => {
 	} = useForm<SignInData>({
 		resolver: zodResolver(signInSchema),
 		mode: 'onBlur',
+		defaultValues: {
+			email: '',
+			password: '',
+		},
 	});
 
 	const onSubmit: SubmitHandler<SignInData> = (data) => {
