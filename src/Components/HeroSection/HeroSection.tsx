@@ -8,6 +8,6 @@ export const HeroSection = () => (
 		<p className="text-xl mb-8 text-gray-700 font-handwritten">
 			La mejor manera de organizar tus tareas y aumentar tu productividad
 		</p>
-		<Button link="/register" style="btn-yellow font-handwritten my-2">Comienza gratis</Button>
+		<Button link="http://localhost:5173/register" style="btn-yellow font-handwritten my-2">Comienza gratis</Button>
 	</section>
 );
