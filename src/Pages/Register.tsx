@@ -13,7 +13,7 @@ export const Register = () => {
 						<Input type="text" placeholder="Email" required />
 					</Form>
 					<a
-						href="http://localhost:5173/login"
+						href="/login"
 						className="absolute mt-4 text-center text-sm text-gray-500 hover:text-blue-600 transition-colors duration-300"
 					>
 						¿Ya tienes una cuenta?
