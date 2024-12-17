@@ -1,6 +1,6 @@
 interface Props {
 	children: React.ReactNode;
-	background: 'error' | 'main' | 'login';
+	background: 'red' | 'blue' | 'yellow';
 }
 
 export const Base: React.FC<Props> = ({ children, background = 'main' }) => {

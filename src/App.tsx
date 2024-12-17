@@ -2,8 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Landing as LandingLayout } from '@layouts/Landing';
 import { Landing as LandingPage } from '@pages/Landing';
 import { Error as ErrorPage } from '@pages/Error';
-import { Login as LoginPage } from '@pages/Login';
-import { Register as RegisterPage } from '@pages/Register';
+import { SignIn as SignInPage } from '@pages/SignIn';
+import { SignUp as SignUpPage } from '@pages/SignUp';
+import { Sign as SignLayout } from '@layouts/Sign';
 import { Base as BaseLayout } from '@layouts/Base';
 
 export const App = () => {
@@ -20,25 +21,25 @@ export const App = () => {
 			<Route
 				path="*"
 				element={
-					<BaseLayout background="error">
+					<BaseLayout background="red">
 						<ErrorPage />
 					</BaseLayout>
 				}
 			/>
 			<Route
-				path="/login"
+				path="/signIn"
 				element={
-					<BaseLayout background="login">
-						<LoginPage />
-					</BaseLayout>
+					<SignLayout>
+						<SignInPage />
+					</SignLayout>
 				}
 			/>
 			<Route
-				path="/register"
+				path="/signUp"
 				element={
-					<BaseLayout background="login">
-						<RegisterPage />
-					</BaseLayout>
+					<SignLayout>
+						<SignUpPage />
+					</SignLayout>
 				}
 			/>
 		</Routes>

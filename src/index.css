@@ -133,15 +133,15 @@ nav {
 		@apply text-3xl mb-8 text-center font-heading;
 	}
 
-	.background-error {
+	.background-red {
 		background-image: radial-gradient(ellipse 100vw 350px, rgba(240, 45, 45, 0.23), #f8fafc);
 	}
 
-	.background-main {
+	.background-blue {
 		background-image: radial-gradient(ellipse 100vw 350px, rgba(29, 133, 238, 0.23), #f8fafc);
 	}
 
-	.background-login {
+	.background-yellow {
 		background-image: radial-gradient(ellipse 100vw 350px, rgba(224, 238, 29, 0.23), #f8fafc);
 	}
 	.font-heading {
@@ -159,5 +159,9 @@ nav {
 
 	.nav-link {
 		@apply hover:text-blue-600 transition-colors duration-300;
+	}
+
+	.form {
+		@apply flex flex-col w-72 justify-center gap-3;
 	}
 }

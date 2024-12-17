@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { signInSchema, SignInData } from '@schemas/signForm';
 
-export const Login = () => {
+export const SignIn = () => {
 	const {
 		control,
 		handleSubmit,
@@ -25,7 +25,7 @@ export const Login = () => {
 	return (
 		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
 			<FormContainer title="Inicio de Sesión">
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-72 justify-center gap-3">
+				<form onSubmit={handleSubmit(onSubmit)} className="form">
 					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
 					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
 					<button type="submit" className="btn-green">
@@ -34,7 +34,7 @@ export const Login = () => {
 				</form>
 				<p className="text-sm text-gray-500">
 					¿No tienes una cuenta?{' '}
-					<a href="/register" className="link-blue">
+					<a href="/signUp" className="link-blue">
 						Regístrate
 					</a>
 				</p>

@@ -14,7 +14,7 @@ export const Navbar = () => {
 				<NavLink href="#features">Características</NavLink>
 				<NavLink href="#how-it-works">Cómo funciona</NavLink>
 				<NavLink href="#pricing">Precios</NavLink>
-				<NavLink href="/login">Iniciar Sesión</NavLink>
+				<NavLink href="/signIn">Iniciar Sesión</NavLink>
 			</div>
 		</nav>
 	);

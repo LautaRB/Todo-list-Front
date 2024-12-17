@@ -13,7 +13,7 @@ export const Landing: React.FC<Props> = ({ children }) => {
 			</header>
 
 			<main className="flex-grow container mx-auto z-0">
-				<div className="background-main fixed inset-0 -z-10"></div>
+				<div className="background-blue fixed inset-0 -z-10"></div>
 				{children}
 			</main>
 			<Footer />
