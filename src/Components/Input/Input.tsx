@@ -1,7 +1,7 @@
 interface Props {
 	type: string;
-	placeholder: string;
-	required: boolean;
+	placeholder?: string;
+	required?: boolean;
 }
 
 export const Input: React.FC<Props> = ({ type, placeholder, required }) => {

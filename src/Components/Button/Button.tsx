@@ -1,5 +1,5 @@
 interface Props {
-    link: string;
+    link?: string;
     style: string;
 	children: React.ReactNode;
 }
