@@ -5,10 +5,7 @@ interface Props {
 
 export const NavLink: React.FC<Props> = ({ children, href }) => {
 	return (
-		<a
-			className={`font-heading cursor-pointer text-xl hover:text-blue-600 transition-colors duration-300`}
-			href={href}
-		>
+		<a className={`font-heading cursor-pointer text-xl link-blue`} href={href}>
 			{children}
 		</a>
 	);

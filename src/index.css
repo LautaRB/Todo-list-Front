@@ -157,7 +157,7 @@ nav {
 	}
 
 	.section-container {
-		@apply bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-8;
+		@apply bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-8;
 	}
 
 	.subtitle {
@@ -194,5 +194,9 @@ nav {
 
 	.font-handwritten {
 		font-family: 'Short Stack', cursive;
+	}
+
+	.link-blue {
+		@apply hover:text-blue-600 transition-colors duration-300;
 	}
 }
