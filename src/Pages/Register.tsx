@@ -27,26 +27,33 @@ export const Register = () => {
 	return (
 		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
 			<FormContainer title="Registro">
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center justify-center gap-7">
-					<div className="flex flex-col gap-2">
-						<Input name="name" type="text" placeholder="Nombre" control={control} error={errors.name} />
-						<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
-						<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
-						<Input
-							name="confirmPassword"
-							type="password"
-							placeholder="Confirmar contraseña"
-							control={control}
-							error={errors.confirmPassword}
-						/>
-						<button type="submit" className="btn-green">
-							Registrarse
-						</button>
-					</div>
+				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-72 justify-center gap-3">
+					<Input name="name" type="text" placeholder="Nombre" control={control} error={errors.name} />
+					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
+					<Input
+						name="password"
+						type="password"
+						placeholder="Contraseña: 6-64 caracteres"
+						control={control}
+						error={errors.password}
+					/>
+					<Input
+						name="confirmPassword"
+						type="password"
+						placeholder="Confirmar contraseña"
+						control={control}
+						error={errors.confirmPassword}
+					/>
+					<button type="submit" className="btn-green">
+						Registrarse
+					</button>
 				</form>
-				<a href="/login" className="block text-sm text-gray-500 link-blue">
-					¿Ya tienes una cuenta?
-				</a>
+				<p className="block text-sm text-gray-500">
+					¿Tienes una cuenta?{' '}
+					<a href="/login" className="link-blue">
+						Inicia sesión
+					</a>
+				</p>
 			</FormContainer>
 		</div>
 	);

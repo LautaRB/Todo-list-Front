@@ -20,11 +20,13 @@ export const Input = <T extends FieldValues>({ name, control, type = 'text', pla
 						type={type}
 						placeholder={placeholder}
 						{...field}
-						className={`p-2 rounded-xl ${error ? 'is-invalid' : ''}`}
+						className={`w-full p-2 rounded-md outline-gray-300 outline outline-[1px] focus:outline-blue-600 placeholder:text-sm placeholder:text-gray-400 ${
+							error ? 'is-invalid' : ''
+						}`}
 					/>
 				)}
 			/>
-			{error && <p className="text-red-500 text-xs">{error.message}</p>}
+			{error && <p className="text-red-500 text-xs pl-1 mt-2">{error.message}</p>}
 		</div>
 	);
 };
