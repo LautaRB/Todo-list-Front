@@ -10,11 +10,13 @@ export const Navbar = () => {
 					Todografo
 				</span>
 			</a>
-			<div className="space-x-4 pr-1 lg:pr-9 self-center text-gray-600 text-right">
+			<div className="space-x-10 pr-1 lg:pr-9 self-center text-gray-600 text-right">
 				<NavLink href="#features">Características</NavLink>
 				<NavLink href="#how-it-works">Cómo funciona</NavLink>
 				<NavLink href="#pricing">Precios</NavLink>
-				<NavLink href="/signIn">Iniciar Sesión</NavLink>
+				<a href="/signIn" className="btn-secondary-blue font-heading text-base">
+					Iniciar Sesión
+				</a>
 			</div>
 		</nav>
 	);
