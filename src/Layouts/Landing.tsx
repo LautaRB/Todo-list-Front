@@ -28,8 +28,8 @@ export const Landing: React.FC<Props> = ({ children }) => {
 	return (
 		<div className="min-h-screen">
 			<header
-				className={`w-full z-10 fixed top-0 transition-colors duration-300 ${
-					isScrolled ? 'bg-opacity-50 backdrop-filter backdrop-blur-lg bg-white shadow-sm' : ''
+				className={`w-full z-10 fixed top-0 transition-colors duration-300 bg-white backdrop-filter backdrop-blur-lg ${
+					isScrolled ? 'bg-opacity-70' : 'lg:bg-opacity-0'
 				}`}
 			>
 				<Navbar />

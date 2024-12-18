@@ -2,7 +2,7 @@ import { StickyNote } from '@components/utils/StickyNote';
 
 export const Error = () => {
 	return (
-		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
+		<div className="grid place-items-center h-screen w-[97%] m-auto lg:w-5/6">
 			<section className="section-container flex flex-col items-center justify-center">
 				<StickyNote color="yellow">
 					<div className="flex flex-col items-center justify-center gap-7">
