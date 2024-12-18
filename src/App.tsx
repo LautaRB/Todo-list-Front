@@ -29,7 +29,7 @@ export const App = () => {
 			<Route
 				path="/signIn"
 				element={
-					<SignLayout>
+					<SignLayout signIn={true}>
 						<SignInPage />
 					</SignLayout>
 				}
@@ -37,7 +37,7 @@ export const App = () => {
 			<Route
 				path="/signUp"
 				element={
-					<SignLayout>
+					<SignLayout signIn={false}>
 						<SignUpPage />
 					</SignLayout>
 				}

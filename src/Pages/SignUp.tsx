@@ -25,7 +25,7 @@ export const SignUp = () => {
 	};
 
 	return (
-		<div className="grid place-items-center h-screen w-11/12 m-auto lg:w-5/6">
+		<div className="grid place-items-center h-screen">
 			<FormContainer title="Registro">
 				<form onSubmit={handleSubmit(onSubmit)} className="form">
 					<Input name="name" type="text" placeholder="Nombre" control={control} error={errors.name} />
@@ -44,7 +44,7 @@ export const SignUp = () => {
 						control={control}
 						error={errors.confirmPassword}
 					/>
-					<button type="submit" className="btn-green">
+					<button type="submit" className="btn-secondary-blue">
 						Registrarse
 					</button>
 				</form>
