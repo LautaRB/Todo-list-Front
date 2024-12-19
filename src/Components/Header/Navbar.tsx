@@ -16,14 +16,14 @@ export const Navbar = () => {
 	];
 
 	return (
-		<nav className="relative grid grid-cols-2 w-[97%] lg:w-5/6 m-auto">
-			<a href="/" className="group flex items-center w-fit pl-1 lg:pl-9">
+		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
+			<a href="/" className="group flex items-center w-fit">
 				<StickmanIcon className="h-11 w-auto text-black" />
 				<span className="text-2xl font-heading -ml-1 group-hover:text-blue-600 transition-colors duration-300">
 					Todografo
 				</span>
 			</a>
-			<div className="hidden lg:flex space-x-10 pr-1 lg:pr-9 text-gray-600 items-center">
+			<div className="hidden lg:flex space-x-10 text-gray-600 items-center justify-end">
 				{navLinks.map((link) => (
 					<NavLink key={link.name} href={link.href}>
 						{link.name}
@@ -38,8 +38,8 @@ export const Navbar = () => {
 			<div className="flex lg:hidden items-center justify-end">
 				<Hamburger color="#2563eb" size={24} toggled={isOpen} toggle={setIsOpen} />
 				{isOpen && (
-					<div className="absolute top-full -left-[6px] w-screen flex flex-col space-y-4 bg-opacity-70 bg-white backdrop-filter backdrop-blur-lg p-4 shadow-sm">
-						<div onClick={handleClick} className="flex flex-col space-y-2 w-[97%] m-auto font-semibold">
+					<div className="absolute top-full w-screen left-0 right-0 flex flex-col space-y-4 bg-opacity-70 bg-white backdrop-filter backdrop-blur-lg py-3 shadow-sm">
+						<div onClick={handleClick} className="flex flex-col space-y-2 w-mobile m-auto font-semibold">
 							{navLinks.map((link) => (
 								<NavLink key={link.name} href={link.href}>
 									{link.name}

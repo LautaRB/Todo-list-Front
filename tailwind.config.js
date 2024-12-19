@@ -37,6 +37,10 @@ export default {
 			fontFamily: {
 				'sour-gummy': ['Sour Gummy', 'sans-serif'],
 			},
+			width: {
+				mobile: '90%',
+				desktop: '85%',
+			},
 		},
 	},
 	plugins: [],

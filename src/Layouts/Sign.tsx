@@ -8,7 +8,7 @@ interface Props {
 export const Sign: React.FC<Props> = ({ children, signIn }) => {
 	return (
 		<div className="min-h-screen">
-			<header className="w-[97%] lg:w-5/6 m-auto z-10 fixed top-5 left-0 right-0 flex items-center justify-between">
+			<header className="w-mobile lg:w-desktop m-auto z-10 fixed top-5 left-0 right-0 flex items-center justify-between">
 				<a href="/" className="group flex items-center w-fit">
 					<StickmanIcon className="h-11 w-auto text-black" />
 					<span className="text-3xl font-heading -ml-1 group-hover:text-blue-600 transition-colors duration-300">
