@@ -13,6 +13,9 @@ export default defineConfig({
 			'@assets': '/src/Assets',
 			'@pages': '/src/Pages',
 			'@schemas': '/src/Schemas',
+			'@hooks': '/src/Hooks',
+			'@customTypes': '/src/Types',
+			'@services': '/src/Services',
 		},
 	},
 });

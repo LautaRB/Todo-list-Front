@@ -3,6 +3,8 @@ import { FormContainer } from '@components/Form/FormContainer';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { signInSchema, SignInData } from '@schemas/signForm';
+import { useApi } from '@hooks/useApi';
+import { loginUser } from '@services/api';
 
 export const SignIn = () => {
 	const {
@@ -18,8 +20,10 @@ export const SignIn = () => {
 		},
 	});
 
+	const { loading, error, data, fetch } = useApi(loginUser);
+
 	const onSubmit: SubmitHandler<SignInData> = (data) => {
-		console.log(data);
+		fetch(data);
 	};
 
 	return (
@@ -38,6 +42,10 @@ export const SignIn = () => {
 						Regístrate
 					</a>
 				</p>
+				{/* TESTING */}
+				{error && <p className="text-sm text-red-500">{error.message}</p>}
+				{loading && <p className="text-sm text-gray-500">Cargando...</p>}
+				{data && <p className="text-sm text-green-500">Sesión iniciada con éxito</p>}
 			</FormContainer>
 		</div>
 	);
