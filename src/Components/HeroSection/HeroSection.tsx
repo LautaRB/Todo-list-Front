@@ -7,6 +7,7 @@ export const HeroSection = () => (
 			La mejor manera de organizar tus tareas y aumentar tu productividad
 		</p>
 		<a className="btn-yellow w-fit font-handwritten" href="/signUp">
+		<a className="btn-yellow w-fit font-handwritten" href="/signUp">
 			Comienza gratis
 		</a>
 	</section>

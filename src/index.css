@@ -7,12 +7,23 @@
 	:root {
 		--navbar-height: 4rem;
 	}
+@layer base {
+	:root {
+		--navbar-height: 4rem;
+	}
 
 	html {
 		scroll-behavior: smooth;
 		scroll-padding-top: var(--navbar-height);
 	}
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: var(--navbar-height);
+	}
 
+	nav {
+		height: var(--navbar-height);
+	}
 	nav {
 		height: var(--navbar-height);
 	}
