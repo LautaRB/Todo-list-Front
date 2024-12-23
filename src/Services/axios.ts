@@ -23,6 +23,11 @@ const setupInterceptors = () => {
 
 	axiosInstance.interceptors.response.use(
 		(response: AxiosResponse) => {
+			const token = response.headers['token?'];
+			if (token) {
+				localStorage.setItem('token', token);
+			}
+			console.log('token', token);
 			console.log(`Response from ${response.config.url}`);
 			return response;
 		},
