@@ -1,4 +1,4 @@
-import { ApiCall } from '@customTypes/useApiCall';
+import { ApiCall } from '@customTypes/ApiCall';
 import { useCallback, useEffect, useState } from 'react';
 
 type Options<P> = {

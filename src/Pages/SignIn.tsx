@@ -2,7 +2,7 @@ import { Input } from '@components/Form/Input';
 import { FormContainer } from '@components/Form/FormContainer';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { signInSchema, SignInData } from '@schemas/signForm';
+import { signInSchema, FormSignInData } from '@schemas/signForm';
 import { useApi } from '@hooks/useApi';
 import { loginUser } from '@services/api';
 
@@ -11,26 +11,37 @@ export const SignIn = () => {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<SignInData>({
+	} = useForm<FormSignInData>({
 		resolver: zodResolver(signInSchema),
 		mode: 'onBlur',
 		defaultValues: {
-			email: '',
+			identifier: '',
 			password: '',
 		},
 	});
 
 	const { loading, error, data, fetch } = useApi(loginUser);
 
-	const onSubmit: SubmitHandler<SignInData> = (data) => {
-		fetch(data);
+	const onSubmit: SubmitHandler<FormSignInData> = (data) => {
+		const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.identifier);
+		const apiData = isEmail
+			? { email: data.identifier, password: data.password }
+			: { username: data.identifier, password: data.password };
+
+		fetch(apiData);
 	};
 
 	return (
 		<div className="grid place-items-center h-screen">
 			<FormContainer title="Inicio de Sesión">
 				<form onSubmit={handleSubmit(onSubmit)} className="form">
-					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
+					<Input
+						name="identifier"
+						type="identifier"
+						placeholder="Nombre de Usuario o Email"
+						control={control}
+						error={errors.identifier}
+					/>
 					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
 					<button type="submit" className={`btn-secondary-blue ${loading ? 'cursor-not-allowed' : ''}`}>
 						{loading ? 'Cargando...' : 'Iniciar Sesión'}

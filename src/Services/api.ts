@@ -1,10 +1,11 @@
 const baseURL = 'https://todografo.vercel.app/api/';
-import { ApiCall } from '@customTypes/useApiCall';
+import { ApiCall } from '@customTypes/ApiCall';
 import { loadAbort } from '@utils/loadAbort';
-import { SignInData, SignUpData } from '@schemas/signForm';
+import { FormSignUpData } from '@schemas/signForm';
+import { ApiSignInData } from '@customTypes/ApiSignInData';
 import axios from 'axios';
 
-export const registerUser = (user: SignUpData): ApiCall<null> => {
+export const registerUser = (user: FormSignUpData): ApiCall<null> => {
 	const controller = loadAbort();
 
 	return {
@@ -15,7 +16,7 @@ export const registerUser = (user: SignUpData): ApiCall<null> => {
 	};
 };
 
-export const loginUser = (user: SignInData): ApiCall<null> => {
+export const loginUser = (user: ApiSignInData): ApiCall<null> => {
 	const controller = loadAbort();
 
 	return {

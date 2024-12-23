@@ -19,9 +19,9 @@ export const signUpSchema = z
 	});
 
 export const signInSchema = z.object({
-	email: z.string().email('El email no es valido'),
-	password: z.string().min(1, 'La contraseña no puede estar vacía'),
+	identifier: z.string().min(1, 'Debes ingresar un nombre de Usuario o Email'),
+	password: z.string(),
 });
 
-export type SignUpData = z.infer<typeof signUpSchema>;
-export type SignInData = z.infer<typeof signInSchema>;
+export type FormSignUpData = z.infer<typeof signUpSchema>;
+export type FormSignInData = z.infer<typeof signInSchema>;
