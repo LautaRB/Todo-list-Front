@@ -1,28 +1,36 @@
 import { StickyNote } from '@components/utils/StickyNote';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
+const features = [
+	{
+		title: 'Organiza tus tareas',
+		description: 'Crea listas personalizadas',
+		color: 'yellow',
+	},
+	{
+		title: 'Establece prioridades',
+		description: 'Ordena por importancia',
+		color: 'green',
+	},
+	{
+		title: 'Colabora con tu equipo',
+		description: 'Comparte y asigna tareas',
+		color: 'pink',
+	},
+];
+
 export const Features = () => (
 	<section id="features" className="section-container">
 		<h2 className="subtitle">Características</h2>
 		<div className="grid md:grid-cols-3 gap-8">
-			<StickyNote title="Organiza tus tareas" color="yellow" animation={true}>
-				<div className="flex items-center space-x-2">
-					<CheckCircleIcon className="h-6 w-6 text-green-500" />
-					<span>Crea listas personalizadas</span>
-				</div>
-			</StickyNote>
-			<StickyNote title="Establece prioridades" color="green" animation={true}>
-				<div className="flex items-center space-x-2">
-					<CheckCircleIcon className="h-6 w-6 text-green-500" />
-					<span>Ordena por importancia</span>
-				</div>
-			</StickyNote>
-			<StickyNote title="Colabora con tu equipo" color="pink" animation={true}>
-				<div className="flex items-center space-x-2">
-					<CheckCircleIcon className="h-6 w-6 text-green-500" />
-					<span>Comparte y asigna tareas</span>
-				</div>
-			</StickyNote>
+			{features.map((feature) => (
+				<StickyNote key={feature.title} title={feature.title} color={feature.color} animation>
+					<div className="flex items-center space-x-2">
+						<CheckCircleIcon className="h-6 w-6 text-green-500" />
+						<span>{feature.description}</span>
+					</div>
+				</StickyNote>
+			))}
 		</div>
 	</section>
 );

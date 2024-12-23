@@ -32,8 +32,8 @@ export const SignIn = () => {
 				<form onSubmit={handleSubmit(onSubmit)} className="form">
 					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
 					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
-					<button type="submit" className="btn-secondary-blue">
-						Iniciar Sesión
+					<button type="submit" className={`btn-secondary-blue ${loading ? 'cursor-not-allowed' : ''}`}>
+						{loading ? 'Cargando...' : 'Iniciar Sesión'}
 					</button>
 				</form>
 				<p className="text-sm text-gray-500">
@@ -44,7 +44,6 @@ export const SignIn = () => {
 				</p>
 				{/* TESTING */}
 				{error && <p className="text-sm text-red-500">{error.message}</p>}
-				{loading && <p className="text-sm text-gray-500">Cargando...</p>}
 				{data && <p className="text-sm text-green-500">Sesión iniciada con éxito</p>}
 			</FormContainer>
 		</div>

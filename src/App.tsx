@@ -29,7 +29,7 @@ export const App = () => {
 			<Route
 				path="/signIn"
 				element={
-					<SignLayout signIn={true}>
+					<SignLayout signIn>
 						<SignInPage />
 					</SignLayout>
 				}

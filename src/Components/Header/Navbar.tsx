@@ -18,11 +18,9 @@ export const Navbar = () => {
 
 	return (
 		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
-			<a href="/" className="group flex items-center w-fit h-fit self-center">
+			<a href="/" className="group flex items-center w-fit self-center">
 				<StickmanIcon className="h-10 w-auto text-black" />
-				<span className="text-2xl font-heading -ml-1 group-hover:text-blue-600 transition-colors duration-300">
-					Todografo
-				</span>
+				<span className="text-2xl -ml-1 group-hover:text-blue-600 transition-colors duration-300">Todografo</span>
 			</a>
 
 			{/* Desktop Nav */}
@@ -32,7 +30,7 @@ export const Navbar = () => {
 						{link.name}
 					</NavLink>
 				))}
-				<a href="/signIn" className="btn-secondary-blue font-heading text-base">
+				<a href="/signIn" className="btn-secondary-blue text-base">
 					Iniciar Sesión
 				</a>
 			</div>
@@ -45,7 +43,7 @@ export const Navbar = () => {
 						isOpen ? 'max-h-96' : 'max-h-0'
 					}`}
 				>
-					<div className="flex flex-col space-y-4 py-3 w-mobile m-auto font-medium" onClick={handleClick}>
+					<div className="flex flex-col space-y-4 py-3 w-mobile m-auto" onClick={handleClick}>
 						{navLinks.map((link) => (
 							<NavLink key={link.name} href={link.href}>
 								{link.name}
