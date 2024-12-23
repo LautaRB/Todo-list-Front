@@ -18,7 +18,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
-			<a href="/" className="group flex items-center w-fit h-fit self-center">
+			<a href="/" className="group flex items-center w-fit self-center">
 				<StickmanIcon className="h-10 w-auto text-black" />
 				<span className="text-2xl font-heading -ml-1 group-hover:text-blue-600 transition-colors duration-300">
 					Todografo

@@ -5,7 +5,7 @@ import { Pricing as PricingSection } from '@components/Pricing/Pricing';
 
 export const Landing = () => {
 	return (
-		<div className="space-y-16 w-mobile lg:w-desktop mb-16 m-auto">
+		<div className="space-y-16 w-mobile lg:w-desktop mt-28 mb-16 m-auto">
 			<HeroSection />
 			<FeaturesSection />
 			<HowWorksSection />
