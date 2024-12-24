@@ -1,3 +1,5 @@
+const flowbite = require('flowbite-react/tailwind');
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -34,14 +36,11 @@ export default {
 
 	theme: {
 		extend: {
-			fontFamily: {
-				'sour-gummy': ['Sour Gummy', 'sans-serif'],
-			},
 			width: {
 				mobile: '90%',
 				desktop: '85%',
 			},
 		},
 	},
-	plugins: [],
+	plugins: [flowbite.plugin()],
 };

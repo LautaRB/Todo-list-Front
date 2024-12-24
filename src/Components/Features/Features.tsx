@@ -1,5 +1,4 @@
 import { StickyNote } from '@components/utils/StickyNote';
-import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 const features = [
 	{
@@ -26,7 +25,6 @@ export const Features = () => (
 			{features.map((feature) => (
 				<StickyNote key={feature.title} title={feature.title} color={feature.color} animation>
 					<div className="flex items-center space-x-2">
-						<CheckCircleIcon className="h-6 w-6 text-green-500" />
 						<span>{feature.description}</span>
 					</div>
 				</StickyNote>

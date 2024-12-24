@@ -37,8 +37,8 @@ export const SignIn = () => {
 				<form onSubmit={handleSubmit(onSubmit)} className="form">
 					<Input
 						name="identifier"
-						type="identifier"
-						placeholder="Nombre de Usuario o Email"
+						type="text"
+						placeholder="Usuario o Email"
 						control={control}
 						error={errors.identifier}
 					/>
