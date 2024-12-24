@@ -6,8 +6,7 @@ export const PrivateGuard = () => {
 	const location = useLocation();
 
 	if (isAuthenticated === null) {
-		// Mientras se verifica la autenticación.
-		return <div>Cargando...</div>;
+		return null;
 	}
 
 	return isAuthenticated ? <Outlet /> : <Navigate to="/signIn" state={{ from: location }} replace />;

@@ -14,17 +14,18 @@ export const AuthProvider = ({ children }: Props) => {
 			try {
 				await axios.post('http://localhost:3000/api/auth/validateAccessToken', {}, { withCredentials: true });
 				setIsAuthenticated(true);
-			} catch (err) {
-				setIsAuthenticated(false);
+			} catch (_) {
+				try {
+					await axios.post('http://localhost:3000/api/auth/refreshAccessToken', {}, { withCredentials: true });
+					setIsAuthenticated(true);
+				} catch (_) {
+					setIsAuthenticated(false);
+				}
 			}
 		};
 
 		validateAuth();
 	}, []);
 
-	return (
-		<AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-			{isAuthenticated === null ? <div>Cargando...</div> : children}
-		</AuthContext.Provider>
-	);
+	return <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>{children}</AuthContext.Provider>;
 };

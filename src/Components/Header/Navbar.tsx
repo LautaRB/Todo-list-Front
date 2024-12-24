@@ -30,7 +30,7 @@ export const Navbar = () => {
 						{link.name}
 					</NavLink>
 				))}
-				<a href="/signIn" className="btn-secondary-blue text-base">
+				<a href="/app" className="btn-secondary-blue text-base">
 					Iniciar Sesión
 				</a>
 			</div>
@@ -50,7 +50,7 @@ export const Navbar = () => {
 								<hr className="border-gray-300 mt-1" />
 							</NavLink>
 						))}
-						<NavLink href="/signIn">Iniciar sesión</NavLink>
+						<NavLink href="/app">Iniciar sesión</NavLink>
 					</div>
 				</div>
 			</div>
