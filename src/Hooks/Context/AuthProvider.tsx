@@ -12,11 +12,11 @@ export const AuthProvider = ({ children }: Props) => {
 	useEffect(() => {
 		const validateAuth = async () => {
 			try {
-				await axios.post('http://localhost:3000/api/auth/validateAccessToken', {}, { withCredentials: true });
+				await axios.post('https://todografo.vercel.app/api/auth/validateAccessToken', {}, { withCredentials: true });
 				setIsAuthenticated(true);
 			} catch (_) {
 				try {
-					await axios.post('http://localhost:3000/api/auth/refreshAccessToken', {}, { withCredentials: true });
+					await axios.post('https://todografo.vercel.app/api/auth/refreshAccessToken', {}, { withCredentials: true });
 					setIsAuthenticated(true);
 				} catch (_) {
 					setIsAuthenticated(false);

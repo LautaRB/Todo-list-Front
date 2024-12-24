@@ -9,10 +9,6 @@ const createAxios = (baseURL: string) => {
 const setupInterceptors = () => {
 	axiosInstance.interceptors.request.use(
 		(config: InternalAxiosRequestConfig) => {
-			const token = localStorage.getItem('token');
-			if (token) {
-				config.headers.Authorization = `Bearer ${token}`;
-			}
 			console.log(`Request made to ${config.url}`);
 			return config;
 		},
@@ -39,8 +35,8 @@ const setupInterceptors = () => {
 };
 
 export const axiosService = () => {
-	// createAxios('https://todografo.vercel.app/api/');
-	createAxios('http://localhost:3000/api/');
+	createAxios('https://todografo.vercel.app/api/');
+	// createAxios('http://localhost:3000/api/');
 	setupInterceptors();
 	return axiosInstance;
 };
