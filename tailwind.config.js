@@ -2,7 +2,7 @@ const flowbite = require('flowbite-react/tailwind');
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', flowbite.content()],
 	safelist: [
 		// Se mantienen los estilos independientemente de si se usan o no
 		'bg-yellow-100',

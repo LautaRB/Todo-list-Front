@@ -1,7 +1,14 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAuthContext } from '@hooks/Context/AuthContext';
 
 export const PrivateGuard = () => {
-	const token = localStorage.getItem('token');
+	const { isAuthenticated } = useAuthContext();
+	const location = useLocation();
 
-	return token ? <Outlet /> : <Navigate to="/signIn" replace />;
+	if (isAuthenticated === null) {
+		// Mientras se verifica la autenticación.
+		return <div>Cargando...</div>;
+	}
+
+	return isAuthenticated ? <Outlet /> : <Navigate to="/signIn" state={{ from: location }} replace />;
 };

@@ -5,6 +5,8 @@ import { Landing as LandingPage } from '@pages/Public/Landing';
 import { SignIn as SignInPage } from '@pages/Public/SignIn';
 import { SignUp as SignUpPage } from '@pages/Public/SignUp';
 import { Sign as SignLayout } from '@layouts/Sign';
+import { TodoApp as TodoAppLayout } from '@layouts/TodoApp';
+import { TodoApp as TodoAppPage } from '@pages/Private/TodoApp';
 import { PrivateGuard } from './Guard/PrivateGuard';
 
 export const AppRouter = () => {
@@ -36,7 +38,14 @@ export const AppRouter = () => {
 					}
 				/>
 				<Route element={<PrivateGuard />}>
-					<Route path="/app" element={<h1>Private</h1>} />
+					<Route
+						path="/app"
+						element={
+							<TodoAppLayout>
+								<TodoAppPage />
+							</TodoAppLayout>
+						}
+					/>
 				</Route>
 			</RoutesWithNotFound>
 		</BrowserRouter>

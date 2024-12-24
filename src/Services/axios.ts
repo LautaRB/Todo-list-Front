@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 
 let axiosInstance: AxiosInstance;
 
 const createAxios = (baseURL: string) => {
-	axiosInstance = axios.create({ baseURL });
+	axiosInstance = axios.create({ baseURL, withCredentials: true });
 };
 
 const setupInterceptors = () => {
@@ -23,23 +23,24 @@ const setupInterceptors = () => {
 
 	axiosInstance.interceptors.response.use(
 		(response: AxiosResponse) => {
-			const token = response.headers['token?'];
-			if (token) {
-				localStorage.setItem('token', token);
-			}
-			console.log('token', token);
 			console.log(`Response from ${response.config.url}`);
 			return response;
 		},
 		(error) => {
 			console.error(error);
+
+			if (error.response && error.response.status === 401) {
+				window.location.href = '/signIn';
+			}
+
 			return Promise.reject(error);
 		},
 	);
 };
 
 export const axiosService = () => {
-	createAxios('https://todografo.vercel.app/api/');
+	// createAxios('https://todografo.vercel.app/api/');
+	createAxios('http://localhost:3000/api/');
 	setupInterceptors();
 	return axiosInstance;
 };

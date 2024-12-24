@@ -5,6 +5,9 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { signInSchema, FormSignInData } from '@schemas/signForm';
 import { useApi } from '@hooks/useApi';
 import { loginUser } from '@services/api';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '@hooks/Context/AuthContext';
 
 export const SignIn = () => {
 	const {
@@ -20,7 +23,10 @@ export const SignIn = () => {
 		},
 	});
 
+	const navigate = useNavigate();
+
 	const { loading, error, data, fetch } = useApi(loginUser);
+	const { setIsAuthenticated } = useAuthContext();
 
 	const onSubmit: SubmitHandler<FormSignInData> = (data) => {
 		const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.identifier);
@@ -30,6 +36,13 @@ export const SignIn = () => {
 
 		fetch(apiData);
 	};
+
+	useEffect(() => {
+		if (data) {
+			setIsAuthenticated(true);
+			navigate('/app');
+		}
+	}, [data, navigate, setIsAuthenticated]);
 
 	return (
 		<div className="grid place-items-center h-screen">
@@ -55,7 +68,6 @@ export const SignIn = () => {
 				</p>
 				{/* TESTING */}
 				{error && <p className="text-sm text-red-500">{error.message}</p>}
-				{data && <p className="text-sm text-green-500">Sesión iniciada con éxito</p>}
 			</FormContainer>
 		</div>
 	);
