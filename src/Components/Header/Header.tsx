@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Navbar } from '@components/Header/Navbar';
+import { NavbarPublic } from '@components/Header/NavbarPublic';
+import { NavbarUser } from '@components/Header/NavbarUser';
 
-export const Header = () => {
+interface Props {
+	navbarType: 'user' | 'public';
+}
+
+export const Header : React.FC<Props> = ({ navbarType }) => {
 	const [isScrolled, setIsScrolled] = useState(false);
+
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -26,7 +32,7 @@ export const Header = () => {
 				isScrolled ? 'bg-opacity-70' : 'lg:bg-opacity-0'
 			}`}
 		>
-			<Navbar />
+			{navbarType === 'user' ? <NavbarUser /> : <NavbarPublic />}
 		</header>
 	);
 };

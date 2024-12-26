@@ -3,7 +3,7 @@ import { Stickman as StickmanIcon } from '@icons/Stickman.tsx';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
 
-export const Navbar = () => {
+export const NavbarPublic = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => {
@@ -20,7 +20,7 @@ export const Navbar = () => {
 		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
 			<a href="/" className="group flex items-center w-fit self-center">
 				<StickmanIcon className="h-10 w-auto text-black" />
-				<span className="text-2xl -ml-1 group-hover:text-blue-600 transition-colors duration-300">Todografo</span>
+				<span className="text-2xl -ml-1 group-hover:text-yellow-400 transition-colors duration-300">Todografo</span>
 			</a>
 
 			{/* Desktop Nav */}
@@ -30,7 +30,7 @@ export const Navbar = () => {
 						{link.name}
 					</NavLink>
 				))}
-				<a href="/app" className="btn-secondary-blue text-base">
+				<a href="/app" className="btn-secondary-yellow text-base">
 					Iniciar Sesión
 				</a>
 			</div>
