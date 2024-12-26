@@ -10,7 +10,7 @@ export const Landing: React.FC<Props> = ({ children }) => {
 		<div className="min-h-screen min-w-screen">
 			<Header />
 			<main className="container mx-auto">
-				<div className="background-blue fixed inset-0 -z-10"></div>
+				<div className="background-blue fixed inset-0 -z-10 dark:background-dark"></div>
 				{children}
 			</main>
 			<Footer />

@@ -4,17 +4,17 @@ const steps = [
 	{
 		title: 'Paso 1',
 		description: 'Regístrate en Todografo',
-		color: 'yellow',
+		color: 'pink',
 	},
 	{
 		title: 'Paso 2',
 		description: 'Crea tus listas de tareas',
-		color: 'yellow',
+		color: 'green',
 	},
 	{
 		title: 'Paso 3',
 		description: 'Organiza y prioriza tus actividades',
-		color: 'yellow',
+		color: 'violet',
 	},
 	{
 		title: 'Paso 4',

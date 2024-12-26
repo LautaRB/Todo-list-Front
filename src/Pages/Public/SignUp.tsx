@@ -44,7 +44,7 @@ export const SignUp = () => {
 						control={control}
 						error={errors.confirmPassword}
 					/>
-					<button type="submit" className="btn-secondary-yellow">
+					<button type="submit" className="btn-secondary-blue">
 						Registrarse
 					</button>
 				</form>

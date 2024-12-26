@@ -1,9 +1,10 @@
 import { NavLink } from './NavLink';
 import { Stickman as StickmanIcon } from '@icons/Stickman.tsx';
+import { DarkThemeToggle } from 'flowbite-react';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
 
-export const NavbarPublic = () => {
+export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => {
@@ -19,27 +20,30 @@ export const NavbarPublic = () => {
 	return (
 		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
 			<a href="/" className="group flex items-center w-fit self-center">
-				<StickmanIcon className="h-10 w-auto text-black" />
-				<span className="text-2xl -ml-1 group-hover:text-yellow-400 transition-colors duration-300">Todografo</span>
+				<StickmanIcon className="h-10 w-auto" />
+				<span className="text-2xl -ml-1 group-hover:text-blue-600 transition-colors duration-300 dark:group-hover:text-yellow-300">
+					Todografo
+				</span>
 			</a>
 
 			{/* Desktop Nav */}
-			<div className="hidden lg:flex space-x-10 text-gray-600 items-center justify-end">
+			<div className="hidden lg:flex space-x-10 text-zinc-600 items-center justify-end dark:text-zinc-300">
 				{navLinks.map((link) => (
 					<NavLink key={link.name} href={link.href}>
 						{link.name}
 					</NavLink>
 				))}
-				<a href="/app" className="btn-secondary-yellow text-base">
+				<a href="/app" className="btn-secondary-blue text-base text-zinc-50 dark:btn-secondary-yellow">
 					Iniciar Sesión
 				</a>
+				<DarkThemeToggle className="text-zinc-800 ring-zinc-600 ring-1 focus:ring-1 focus:ring-zinc-600 dark:ring-zinc-200 dark:focus:ring-zinc-200 dark:text-zinc-200" />
 			</div>
 
 			{/* Mobile Nav */}
 			<div className="flex lg:hidden items-center justify-end">
-				<Hamburger color="#2563eb" size={24} toggled={isOpen} toggle={setIsOpen} />
+				<Hamburger color="#fde047" size={24} toggled={isOpen} toggle={setIsOpen} />
 				<div
-					className={`absolute top-full w-screen left-0 right-0 flex flex-col bg-opacity-70 bg-white backdrop-filter backdrop-blur-lg shadow-sm transition-all duration-[350ms] overflow-hidden ${
+					className={`absolute top-full w-screen left-0 right-0 flex flex-col bg-zinc-50 shadow-sm transition-all duration-[350ms] overflow-hidden dark:bg-zinc-700 ${
 						isOpen ? 'max-h-96' : 'max-h-0'
 					}`}
 				>
@@ -47,7 +51,7 @@ export const NavbarPublic = () => {
 						{navLinks.map((link) => (
 							<NavLink key={link.name} href={link.href}>
 								{link.name}
-								<hr className="border-gray-300 mt-1" />
+								<hr className="border-zinc-300 mt-1" />
 							</NavLink>
 						))}
 						<NavLink href="/app">Iniciar sesión</NavLink>

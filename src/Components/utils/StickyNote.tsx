@@ -18,7 +18,7 @@ export const StickyNote: React.FC<Props> = ({
 	<div
 		className={`${
 			animation ? animationStyle : ''
-		} sticky-note bg-${color}-100 after:border-b-${color}-100 after:border-l-${color}-100 ${className}`}
+		} sticky-note bg-${color}-100 after:border-b-${color}-100 after:border-l-${color}-100 dark:bg-${color}-200 dark:opacity-85 ${className}`}
 	>
 		{title && <h3 className="text-lg mb-2">{title}</h3>}
 		<div className="font-handwritten text-sm">{children}</div>
