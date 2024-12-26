@@ -11,18 +11,15 @@ export const NavbarUser = () => {
 	};
 
 	return (
-		<nav className="grid grid-cols-2 w-mobile lg:w-desktop m-auto">
-			<a href="/" className="group flex items-center w-fit self-center">
+		<nav className="inline-grid grid-cols-2 w-mobile lg:w-desktop m-auto">
+			{/* Desktop Nav */}
+			<div className="hidden lg:flex items-center top-0 left-0">
+				<CustomDrawer />
+			</div>
+			<a href="#" className="group absolute ml-[100px] mt-[25px] flex items-center justify-center">
 				<StickmanIcon className="h-10 w-auto text-black" />
 				<span className="text-2xl -ml-1 group-hover:text-yellow-400 transition-colors duration-300">Todografo</span>
 			</a>
-
-			{/* Desktop Nav */}
-			<div className="hidden lg:flex space-x-10 text-gray-600 items-center justify-end">
-                <a href="#" className="btn-secondary-yellow text-base">
-					Cerrar sesión
-				</a>
-			</div>
 
 			{/* Mobile Nav */}
 			<div className="flex lg:hidden items-center justify-end">
@@ -32,9 +29,7 @@ export const NavbarUser = () => {
 						isOpen ? 'max-h-96' : 'max-h-0'
 					}`}
 				>
-					<div className="flex flex-col space-y-4 py-3 w-mobile m-auto" onClick={handleClick}>
-						
-					</div>
+					<div className="flex flex-col space-y-4 py-3 w-mobile m-auto" onClick={handleClick}></div>
 				</div>
 			</div>
 		</nav>
