@@ -22,7 +22,7 @@ export const Header = () => {
 
 	return (
 		<header
-			className={`w-full z-10 fixed top-0 transition-colors duration-300 bg-zinc-50 backdrop-filter backdrop-blur-lg dark:bg-zinc-800  ${
+			className={`w-full z-10 fixed top-0 transition-colors duration-300 bg-zinc-100 backdrop-filter backdrop-blur-lg dark:bg-zinc-800  ${
 				isScrolled ? 'lg:bg-opacity-70 dark:lg:bg-opacity-70' : 'dark:lg:bg-opacity-0 lg:bg-opacity-0'
 			}`}
 		>

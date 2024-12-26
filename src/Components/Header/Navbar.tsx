@@ -40,8 +40,9 @@ export const Navbar = () => {
 			</div>
 
 			{/* Mobile Nav */}
-			<div className="flex lg:hidden items-center justify-end">
-				<Hamburger color="#fde047" size={24} toggled={isOpen} toggle={setIsOpen} />
+			<div className="flex lg:hidden items-center justify-end gap-3">
+				<DarkThemeToggle className="text-zinc-800 ring-zinc-600 ring-1 focus:ring-1 focus:ring-zinc-600 dark:ring-zinc-200 dark:focus:ring-zinc-200 dark:text-zinc-200" />
+				<Hamburger color="currentColor" size={24} toggled={isOpen} toggle={setIsOpen} />
 				<div
 					className={`absolute top-full w-screen left-0 right-0 flex flex-col bg-zinc-50 shadow-sm transition-all duration-[350ms] overflow-hidden dark:bg-zinc-700 ${
 						isOpen ? 'max-h-96' : 'max-h-0'
