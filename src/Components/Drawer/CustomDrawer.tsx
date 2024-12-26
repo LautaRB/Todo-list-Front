@@ -19,9 +19,15 @@ export const CustomDrawer = () => {
 
 	return (
 		<>
-			<div className="flex min-h-[50vh] top-0 left-0 ml-2 mt-2">
-				<Button className="btn-black h-[60px] w-[60px]" onClick={() => setIsOpen(true)}>---<br />---<br />---</Button>
-				<p className='text-sm text-black font-bold ml-2 mt-8'>MENU</p>
+			<div className="flex min-h-[50vh] top-0 left-0 ml-4 mt-4">
+				<Button className="bg-gray-800 text-white hover:bg-gray-700 h-[60px] w-[60px]" onClick={() => setIsOpen(true)}>
+					<div className="flex flex-col items-center justify-center">
+						<div className="w-6 h-1 bg-white mb-1"></div>
+						<div className="w-6 h-1 bg-white mb-1"></div>
+						<div className="w-6 h-1 bg-white"></div>
+					</div>
+				</Button>
+				<p className="text-sm text-black text-xl font-bold ml-2 mt-8">Menú</p>
 			</div>
 			<Drawer open={isOpen} onClose={handleClose}>
 				<Drawer.Header title="MENU" titleIcon={() => <></>} />
