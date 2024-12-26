@@ -3,7 +3,7 @@ import { Stickman as StickmanIcon } from '@icons/Stickman.tsx';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
 
-export const Navbar = () => {
+export const NavbarPublic = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => {

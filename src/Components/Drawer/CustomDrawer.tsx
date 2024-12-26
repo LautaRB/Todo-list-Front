@@ -6,6 +6,7 @@ import {
 	HiCollection,
 	HiInformationCircle,
 	HiLogin,
+	HiLogout,
 	HiPencil,
 	HiSearch,
 	HiShoppingBag,
@@ -27,10 +28,9 @@ export const CustomDrawer = () => {
 						<div className="w-6 h-1 bg-white"></div>
 					</div>
 				</Button>
-				<p className="text-sm text-black text-xl font-bold ml-2 mt-8">Menú</p>
 			</div>
 			<Drawer open={isOpen} onClose={handleClose}>
-				<Drawer.Header title="MENU" titleIcon={() => <></>} />
+				<Drawer.Header title="MENÚ" titleIcon={() => <></>} />
 				<Drawer.Items>
 					<Sidebar
 						aria-label="Sidebar with multi-level dropdown example"
@@ -57,6 +57,9 @@ export const CustomDrawer = () => {
 										</Sidebar.Item>
 										<Sidebar.Item href="/authentication/sign-up" icon={HiPencil}>
 											Sign up
+										</Sidebar.Item>
+										<Sidebar.Item href="/authentication/log-out" icon={HiLogout}>
+											Log-out
 										</Sidebar.Item>
 									</Sidebar.ItemGroup>
 									<Sidebar.ItemGroup>
