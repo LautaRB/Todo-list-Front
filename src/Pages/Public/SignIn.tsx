@@ -56,7 +56,7 @@ export const SignIn = () => {
 						error={errors.identifier}
 					/>
 					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
-					<button type="submit" className={`btn-secondary-blue ${loading ? 'cursor-not-allowed' : ''}`}>
+					<button type="submit" className={`btn-secondary-yellow ${loading ? 'cursor-not-allowed' : ''}`}>
 						{loading ? 'Cargando...' : 'Iniciar Sesión'}
 					</button>
 				</form>
