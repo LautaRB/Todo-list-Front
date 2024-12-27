@@ -126,15 +126,19 @@
 	}
 
 	.link-blue {
-		@apply text-blue-600 border-b border-transparent hover:border-blue-600 transition-colors duration-300;
+		@apply text-blue-600 border-b border-transparent hover:border-blue-600 transition-colors duration-300 dark:text-blue-200 dark:hover:border-blue-300;
 	}
 
 	.link-yellow {
-		@apply text-yellow-500 border-b border-transparent hover:border-yellow-400 transition-colors duration-300;
+		@apply text-yellow-500 border-b border-transparent hover:border-yellow-400 transition-colors duration-300 dark:text-yellow-200 dark:hover:border-yellow-300;
 	}
 
 	.nav-link {
 		@apply hover:text-blue-600 transition-colors duration-300 dark:hover:text-yellow-300;
+	}
+
+	.toggle-btn {
+		@apply text-zinc-800 ring-zinc-600 ring-1 focus:ring-1 focus:ring-zinc-600 hover:bg-zinc-100 hover:dark:bg-zinc-600 dark:ring-zinc-200 dark:focus:ring-zinc-200 dark:text-zinc-200 !important;
 	}
 }
 

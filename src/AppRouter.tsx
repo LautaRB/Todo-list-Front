@@ -24,7 +24,7 @@ export const AppRouter = () => {
 				<Route
 					path="/signIn"
 					element={
-						<SignLayout signIn>
+						<SignLayout>
 							<SignInPage />
 						</SignLayout>
 					}
@@ -32,7 +32,7 @@ export const AppRouter = () => {
 				<Route
 					path="/signUp"
 					element={
-						<SignLayout signIn={false}>
+						<SignLayout>
 							<SignUpPage />
 						</SignLayout>
 					}

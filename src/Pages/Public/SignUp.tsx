@@ -44,13 +44,13 @@ export const SignUp = () => {
 						control={control}
 						error={errors.confirmPassword}
 					/>
-					<button type="submit" className="btn-secondary-blue">
+					<button type="submit" className="btn-secondary-blue text-zinc-50 dark:btn-secondary-yellow">
 						Registrarse
 					</button>
 				</form>
-				<p className="text-sm text-gray-500">
+				<p className="text-sm text-zinc-600 dark:text-zinc-300">
 					¿Tienes una cuenta?{' '}
-					<a href="/signIn" className="link-blue">
+					<a href="/signIn" className="link-blue dark:link-yellow">
 						Inicia sesión
 					</a>
 				</p>

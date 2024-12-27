@@ -56,18 +56,22 @@ export const SignIn = () => {
 						error={errors.identifier}
 					/>
 					<Input name="password" type="password" placeholder="Contraseña" control={control} error={errors.password} />
-					<button type="submit" className={`btn-secondary-blue ${loading ? 'cursor-not-allowed' : ''}`}>
+					<button
+						type="submit"
+						className={`btn-secondary-blue text-zinc-50 dark:btn-secondary-yellow ${
+							loading ? 'cursor-not-allowed' : ''
+						}`}
+					>
 						{loading ? 'Cargando...' : 'Iniciar Sesión'}
 					</button>
 				</form>
-				<p className="text-sm text-gray-500">
+				<p className="text-sm text-zinc-600 dark:text-zinc-300">
 					¿No tienes una cuenta?{' '}
-					<a href="/signUp" className="link-blue">
+					<a href="/signUp" className="link-blue dark:link-yellow">
 						Regístrate
 					</a>
 				</p>
-				{/* TESTING */}
-				{error && <p className="text-sm text-red-500">{error.message}</p>}
+				{error && <p className="text-sm text-red-500 dark:text-red-300">{error.message}</p>}
 			</FormContainer>
 		</div>
 	);

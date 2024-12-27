@@ -20,13 +20,13 @@ export const Input = <T extends FieldValues>({ name, control, type = 'text', pla
 						type={type}
 						placeholder={placeholder}
 						{...field}
-						className={`w-full p-2 rounded-md border-none outline-gray-300 outline outline-[1px] placeholder:text-sm placeholder:text-gray-400 ${
+						className={`w-full text-zinc-800 p-2 rounded-md border-none outline-gray-300 outline outline-[1px] placeholder:text-sm placeholder:text-gray-400 focus:dark:outline-yellow-300 focus:dark:outline-offset-0 ${
 							error ? 'is-invalid' : ''
 						}`}
 					/>
 				)}
 			/>
-			{error && <p className="text-red-500 text-xs pl-1 mt-2">{error.message}</p>}
+			{error && <p className="text-red-500 text-xs pl-1 mt-2 dark:text-red-300">{error.message}</p>}
 		</div>
 	);
 };
