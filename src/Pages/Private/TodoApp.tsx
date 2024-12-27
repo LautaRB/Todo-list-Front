@@ -1,3 +1,3 @@
 export const TodoApp = () => {
-	return <div></div>;
+	return <div className="w-mobile m-auto"></div>;
 };

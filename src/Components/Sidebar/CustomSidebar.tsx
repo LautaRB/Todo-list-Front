@@ -3,23 +3,22 @@ import { SidebarContent } from './SidebarContent';
 import { FcTodoList } from 'react-icons/fc';
 import { VscGithubAlt } from 'react-icons/vsc';
 import { HiOutlineLogout } from 'react-icons/hi';
-import { FooterItem } from './FooterItem';
+import { SideButton } from './SideButton';
 
 export const CustomSidebar = () => {
 	return (
-		<Sidebar className="absolute h-screen w-56 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 hidden lg:block">
-			<a href="/" className="flex gap-3 items-center mb-2 text-black dark:text-white w-fit pl-2 text-xl">
+		<Sidebar className="fixed top-0 left-0 h-screen w-56 bg-zinc-50 dark:bg-zinc-700 shadow-lg border-r border-zinc-200 dark:border-zinc-600 hidden lg:block">
+			<a href="/" className="flex gap-3 items-center mb-5 w-fit pl-2 text-base">
 				<FcTodoList />
 				Todografo
 			</a>
-			<hr className="border-gray-200 dark:border-gray-700 w-full mb-3" />
 			<Sidebar.Items>
 				<SidebarContent />
-				<footer className="absolute bottom-2 right-2 flex items-center">
-					<FooterItem ariaLabel="Repositorio" icon={VscGithubAlt} />
-					<DarkThemeToggle />
-					<FooterItem ariaLabel="Cerrar sesión" icon={HiOutlineLogout} />
-				</footer>
+				<div className="absolute bottom-2 right-2 flex items-center">
+					<SideButton ariaLabel="Repositorio" icon={VscGithubAlt} />
+					<DarkThemeToggle className="icon-btn" />
+					<SideButton ariaLabel="Cerrar sesión" icon={HiOutlineLogout} />
+				</div>
 			</Sidebar.Items>
 		</Sidebar>
 	);

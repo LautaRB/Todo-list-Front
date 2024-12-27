@@ -7,7 +7,7 @@ interface Props {
 
 export const TodoApp: React.FC<Props> = ({ children }) => {
 	return (
-		<div className="min-h-screen min-w-screen bg-white dark:bg-gray-800">
+		<div className="min-h-screen min-w-screen bg-white dark:bg-green-500">
 			<CustomDrawer />
 			<CustomSidebar />
 			<main className="container mx-auto">{children}</main>
