@@ -7,6 +7,8 @@ import { SignUp as SignUpPage } from '@pages/Public/SignUp';
 import { Sign as SignLayout } from '@layouts/Sign';
 import { TodoApp as TodoAppLayout } from '@layouts/TodoApp';
 import { TodoApp as TodoAppPage } from '@pages/Private/TodoApp';
+import { Profile as ProfileLayout } from '@layouts/Profile';
+import { Profile as ProfilePage } from '@pages/Private/Profile';
 import { PrivateGuard } from './Guard/PrivateGuard';
 
 export const AppRouter = () => {
@@ -44,6 +46,13 @@ export const AppRouter = () => {
 							<TodoAppLayout>
 								<TodoAppPage />
 							</TodoAppLayout>
+						}
+					/>
+					<Route path="/app/profile"
+						element={
+							<ProfileLayout>
+								<ProfilePage />
+							</ProfileLayout>
 						}
 					/>
 				</Route>
