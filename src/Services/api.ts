@@ -4,6 +4,7 @@ import { FormSignUpData } from '@schemas/signForm';
 import { ApiSignInData } from '@customTypes/ApiSignInData';
 import { axiosService } from './axios';
 import { ApiUserProfileData } from '@customTypes/ApiUserProfileData';
+import { ApiResponse } from '@customTypes/ApiResponse';
 
 const axiosInstance = axiosService();
 
@@ -44,11 +45,11 @@ export const validateJWT = (): ApiCall<null> => {
 	};
 };
 
-export const getUserData = ():  ApiCall<ApiUserProfileData> => {
+export const getUserData = (): ApiCall<ApiResponse<ApiUserProfileData>> => {
     const controller = loadAbort();
 
-	return {
-        call: axiosInstance.get<ApiUserProfileData>('me/profile', {
+    return {
+        call: axiosInstance.get<ApiResponse<ApiUserProfileData>>('me/profile', {
             signal: controller.signal,
         }),
         controller,

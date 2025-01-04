@@ -1,4 +1,6 @@
 import { ApiCall } from '@customTypes/ApiCall';
+import { ApiResponse } from '@customTypes/ApiResponse';
+import { AxiosResponse } from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 
 type Options<P> = {
@@ -16,9 +18,10 @@ interface Result<T, P> {
 	fetch: (params: P) => void;
 }
 
-export const useApi = <T, P>(apiCall: (params: P) => ApiCall<T>, options?: Options<P>): Result<T, P> => {
+export const useApi = <T extends ApiResponse<unknown>, P>(apiCall: (params: P) => ApiCall<T>,options?: Options<P>,
+): Result<T['data'], P> => {
 	const [loading, setLoading] = useState(false);
-	const [data, setData] = useState<Data<T>>(null);
+	const [data, setData] = useState<Data<T['data']>>(null);
 	const [error, setError] = useState<CustomError>(null);
 
 	const fetch = useCallback(
@@ -27,9 +30,8 @@ export const useApi = <T, P>(apiCall: (params: P) => ApiCall<T>, options?: Optio
 			setLoading(true);
 
 			call
-				.then((res) => {
-					const result = (res.data as any).data || res.data;
-					setData(result);
+				.then((res: AxiosResponse<T>) => {
+					setData(res.data.data);
 					setError(null);
 				})
 				.catch((err) => {
