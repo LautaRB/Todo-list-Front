@@ -28,7 +28,8 @@ export const useApi = <T, P>(apiCall: (params: P) => ApiCall<T>, options?: Optio
 
 			call
 				.then((res) => {
-					setData(res.data);
+					const result = (res.data as any).data || res.data;
+					setData(result);
 					setError(null);
 				})
 				.catch((err) => {
