@@ -1,4 +1,4 @@
-export interface ApiUserData {
+export interface ApiUserProfileData {
 	username: string;
     email: string;
 }

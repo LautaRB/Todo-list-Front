@@ -3,7 +3,7 @@ import { loadAbort } from '@utils/loadAbort';
 import { FormSignUpData } from '@schemas/signForm';
 import { ApiSignInData } from '@customTypes/ApiSignInData';
 import { axiosService } from './axios';
-import { ApiUserData } from '@customTypes/ApiUserData';
+import { ApiUserProfileData } from '@customTypes/ApiUserProfileData';
 
 const axiosInstance = axiosService();
 
@@ -44,11 +44,11 @@ export const validateJWT = (): ApiCall<null> => {
 	};
 };
 
-export const getUserData = ():  ApiCall<ApiUserData> => {
+export const getUserData = ():  ApiCall<ApiUserProfileData> => {
     const controller = loadAbort();
 
 	return {
-        call: axiosInstance.get<ApiUserData>('me/profile', {
+        call: axiosInstance.get<ApiUserProfileData>('me/profile', {
             signal: controller.signal,
         }),
         controller,
