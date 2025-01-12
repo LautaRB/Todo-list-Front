@@ -13,7 +13,7 @@ export const CustomDrawer = () => {
 	const handleClose = () => setIsOpen(false);
 
 	return (
-		<header className="block lg:hidden sticky top-0">
+		<header className="block lg:hidden relative top-0">
 			<div className="w-screen bg-zinc-50 dark:bg-zinc-700 shadow-lg">
 				<nav className="flex w-mobile m-auto bg-zinc-50 items-center justify-between dark:bg-zinc-700">
 					<Hamburger color="currentColor" size={24} toggled={isOpen} toggle={setIsOpen} />

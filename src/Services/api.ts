@@ -5,6 +5,7 @@ import { ApiSignInData } from '@customTypes/ApiSignInData';
 import { axiosService } from './axios';
 import { ApiUserProfileData } from '@customTypes/ApiUserProfileData';
 import { ApiResponse } from '@customTypes/ApiResponse';
+import { ApiUserTasks } from '@customTypes/ApiUserTasks';
 
 const axiosInstance = axiosService();
 
@@ -46,13 +47,23 @@ export const validateJWT = (): ApiCall<null> => {
 };
 
 export const getUserData = (): ApiCall<ApiResponse<ApiUserProfileData>> => {
-    const controller = loadAbort();
+	const controller = loadAbort();
 
-    return {
-        call: axiosInstance.get<ApiResponse<ApiUserProfileData>>('me/profile', {
-            signal: controller.signal,
-        }),
-        controller,
-    };
+	return {
+		call: axiosInstance.get<ApiResponse<ApiUserProfileData>>('me/profile', {
+			signal: controller.signal,
+		}),
+		controller,
+	};
 };
 
+export const getUserTasks = (): ApiCall<ApiResponse<ApiUserTasks[]>> => {
+	const controller = loadAbort();
+
+	return {
+		call: axiosInstance.get<ApiResponse<ApiUserTasks[]>>('me/tasks', {
+			signal: controller.signal,
+		}),
+		controller,
+	};
+};

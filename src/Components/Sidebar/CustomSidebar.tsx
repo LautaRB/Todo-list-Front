@@ -7,7 +7,7 @@ import { SideButton } from './SideButton';
 
 export const CustomSidebar = () => {
 	return (
-		<Sidebar className="fixed top-0 left-0 h-screen w-56 bg-zinc-50 dark:bg-zinc-700 shadow-lg border-r border-zinc-200 dark:border-zinc-600 hidden lg:block">
+		<Sidebar className="relative top-0 left-0 h-screen w-56 bg-zinc-50 dark:bg-zinc-700 shadow-lg border-r border-zinc-200 dark:border-zinc-600 hidden lg:block z-10">
 			<a href="/" className="flex gap-3 items-center mb-5 w-fit pl-2 text-base">
 				<FcTodoList />
 				Todografo

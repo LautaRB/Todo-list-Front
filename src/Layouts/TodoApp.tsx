@@ -7,10 +7,13 @@ interface Props {
 
 export const TodoApp: React.FC<Props> = ({ children }) => {
 	return (
-		<div className="min-h-screen min-w-screen bg-white dark:bg-green-500">
+		<div className="h-screen bg-zinc-50 dark:bg-zinc-700 lg:flex">
+			{/* Drawer para celulares */}
 			<CustomDrawer />
+			{/* Sidebar fijo en vistas de escritorio */}
 			<CustomSidebar />
-			<main className="container mx-auto">{children}</main>
+			{/* Contenedor principal */}
+			<main className="flex-1 flex flex-col items-center mt-12">{children}</main>
 		</div>
 	);
 };
