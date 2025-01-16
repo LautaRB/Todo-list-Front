@@ -20,13 +20,32 @@ export const registerUser = (user: FormSignUpData): ApiCall<null> => {
 	};
 };
 
-export const loginUser = (user: ApiSignInData): ApiCall<null> => {
+export const loginUser = (user: ApiSignInData): ApiCall<ApiResponse<ApiSignInData>> => {
 	const controller = loadAbort();
 
 	return {
-		call: axiosInstance.post<null>('auth/login', user, {
-			signal: controller.signal,
-		}),
+		call: axiosInstance.post<ApiResponse<ApiSignInData>>(
+			'auth/login',
+			user,
+			{
+				signal: controller.signal,
+			},
+		),
+		controller,
+	};
+};
+
+export const logoutUser = (): ApiCall<ApiResponse<{}>> => {
+	const controller = loadAbort();
+
+	return {
+		call: axiosInstance.post<ApiResponse<{}>>(
+			'auth/logout',
+			{},
+			{
+				signal: controller.signal,
+			},
+		),
 		controller,
 	};
 };
