@@ -31,7 +31,7 @@ export const useApi = <T extends ApiResponse<unknown>, P>(apiCall: (params: P) =
 
 			call
 				.then((res: AxiosResponse<T>) => {
-					setData(res.data.data);
+					setData(res.data?.data || null);
 					setError(null);
 				})
 				.catch((err) => {

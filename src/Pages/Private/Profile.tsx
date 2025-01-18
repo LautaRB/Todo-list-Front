@@ -16,7 +16,7 @@ export const Profile = () => {
         <div className="max-w-md mx-auto p-6 bg-gray-600 dark:bg-green-200 shadow-lg rounded-lg">
             <div className="text-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-800">
-                    {data?.username || 'Nombre no disponible'}
+                    {'Bienvenido! ' + data?.username || 'Nombre no disponible'}
                 </h1>
             </div>
             <div className="mb-6">
