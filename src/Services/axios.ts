@@ -36,7 +36,7 @@ const setupInterceptors = () => {
 
 export const axiosService = () => {
 	createAxios('https://todografo.vercel.app/api/');
-	// createAxios('http://localhost:3000/api/');
+	//createAxios('http://localhost:3000/api/'); Testing
 	setupInterceptors();
 	return axiosInstance;
 };

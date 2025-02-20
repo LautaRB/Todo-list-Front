@@ -33,7 +33,10 @@ export const Navbar = () => {
 						{link.name}
 					</NavLink>
 				))}
-				<a href="/app" className="btn-secondary-blue text-base text-zinc-50 dark:btn-secondary-yellow">
+				<a
+					href="/app"
+					className="btn-secondary-blue text-base text-zinc-50 dark:btn-secondary-yellow px-3 py-2 text-lg text-center"
+				>
 					Iniciar Sesión
 				</a>
 				<DarkThemeToggle className="toggle-btn" />

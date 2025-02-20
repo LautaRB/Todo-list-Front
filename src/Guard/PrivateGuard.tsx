@@ -9,6 +9,6 @@ export const PrivateGuard = () => {
 		return null;
 	}
 
-	// return isAuthenticated ? <Outlet /> : <Navigate to="/signIn" state={{ from: location }} replace />;
-	return <Outlet />;
+	return isAuthenticated ? <Outlet /> : <Navigate to="/signIn" state={{ from: location }} replace />;
+	//return <Outlet />;
 };
