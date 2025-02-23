@@ -23,7 +23,6 @@ export const CustomSidebar = () => {
             setIsAuthenticated(false);
             setLogoutError(null);
             navigate('/signIn');
-            window.location.reload();
         } catch (err) {
             console.error("Error al cerrar sesión:", err || "Error desconocido");
             setLogoutError("Error al cerrar sesión. Inténtalo de nuevo.");
