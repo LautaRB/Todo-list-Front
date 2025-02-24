@@ -11,7 +11,7 @@ import { useAuthContext } from '@hooks/Context/AuthContext';
 import { useState } from 'react';
 
 export const CustomSidebar = () => {
-    const { loading, error, data, fetch } = useApi(logoutUser);
+    const { fetch } = useApi(logoutUser);
     const { setIsAuthenticated } = useAuthContext();
     const navigate = useNavigate();
     const [logoutError, setLogoutError] = useState<string | null>(null);
@@ -46,7 +46,7 @@ export const CustomSidebar = () => {
                     <DarkThemeToggle className="icon-btn" />
                     <SideButton ariaLabel="Cerrar sesión" icon={HiOutlineLogout} onClick={handleLogout} />
                 </div>
-                {logoutError && <p className="text-red-500">{logoutError}</p>} {/* Mostrar mensaje de error */}
+                {logoutError && <p className="text-red-500">{logoutError}</p>}
             </Sidebar.Items>
         </Sidebar>
     );

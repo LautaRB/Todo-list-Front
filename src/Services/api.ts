@@ -50,6 +50,21 @@ export const logoutUser = (): ApiCall<ApiResponse<{}>> => {
 	};
 };
 
+export const updateUserProfile = (user: ApiUserProfileData): ApiCall<ApiResponse<ApiUserProfileData>> => {
+	const controller = loadAbort();
+
+	return {
+		call: axiosInstance.patch<ApiResponse<ApiUserProfileData>>(
+			'me/profile',
+			user,
+			{
+				signal: controller.signal,
+			},
+		),
+		controller,
+	}
+};
+
 export const validateJWT = (): ApiCall<null> => {
 	const controller = loadAbort();
 
