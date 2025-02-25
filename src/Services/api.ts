@@ -5,7 +5,7 @@ import { ApiSignInData } from '@customTypes/ApiSignInData';
 import { axiosService } from './axios';
 import { ApiUserProfileData } from '@customTypes/ApiUserProfileData';
 import { ApiResponse } from '@customTypes/ApiResponse';
-import { ApiUserTasks } from '@customTypes/ApiUserTasks';
+import { ApiTaskCreate, ApiTaskUpdate, ApiUserTasks } from '@customTypes/ApiUserTasks';
 
 const axiosInstance = axiosService();
 
@@ -24,13 +24,9 @@ export const loginUser = (user: ApiSignInData): ApiCall<ApiResponse<ApiSignInDat
 	const controller = loadAbort();
 
 	return {
-		call: axiosInstance.post<ApiResponse<ApiSignInData>>(
-			'auth/login',
-			user,
-			{
-				signal: controller.signal,
-			},
-		),
+		call: axiosInstance.post<ApiResponse<ApiSignInData>>('auth/login', user, {
+			signal: controller.signal,
+		}),
 		controller,
 	};
 };
@@ -54,15 +50,11 @@ export const updateUserProfile = (user: ApiUserProfileData): ApiCall<ApiResponse
 	const controller = loadAbort();
 
 	return {
-		call: axiosInstance.patch<ApiResponse<ApiUserProfileData>>(
-			'me/profile',
-			user,
-			{
-				signal: controller.signal,
-			},
-		),
+		call: axiosInstance.patch<ApiResponse<ApiUserProfileData>>('me/profile', user, {
+			signal: controller.signal,
+		}),
 		controller,
-	}
+	};
 };
 
 export const validateJWT = (): ApiCall<null> => {
@@ -98,6 +90,25 @@ export const getUserTasks = (): ApiCall<ApiResponse<ApiUserTasks[]>> => {
 		call: axiosInstance.get<ApiResponse<ApiUserTasks[]>>('me/tasks', {
 			signal: controller.signal,
 		}),
+		controller,
+	};
+};
+
+export const addUserTask = (task: ApiTaskCreate): ApiCall<ApiResponse<ApiUserTasks>> => {
+	const controller = loadAbort();
+
+	return {
+		call: axiosInstance.post<ApiResponse<ApiUserTasks>>('me/tasks', task, {
+			signal: controller.signal,
+		}),
+		controller,
+	};
+};
+
+export const updateUserTask = (taskId: string, taskData: ApiTaskUpdate): ApiCall<ApiResponse<ApiUserTasks>> => {
+	const controller = loadAbort();
+	return {
+		call: axiosInstance.patch<ApiResponse<ApiUserTasks>>(`me/tasks/${taskId}`, taskData, { signal: controller.signal }),
 		controller,
 	};
 };
