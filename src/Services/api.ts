@@ -6,14 +6,15 @@ import { axiosService } from './axios';
 import { ApiUserProfileData } from '@customTypes/ApiUserProfileData';
 import { ApiResponse } from '@customTypes/ApiResponse';
 import { ApiTaskCreate, ApiTaskUpdate, ApiUserTasks } from '@customTypes/ApiUserTasks';
+import { ApiSignUpData } from '@customTypes/ApiSignUpData';
 
 const axiosInstance = axiosService();
 
-export const registerUser = (user: FormSignUpData): ApiCall<null> => {
+export const registerUser = (user: FormSignUpData): ApiCall<ApiResponse<ApiSignUpData>> => {
 	const controller = loadAbort();
 
 	return {
-		call: axiosInstance.post<null>('auth/register', user, {
+		call: axiosInstance.post<ApiResponse<ApiSignUpData>>('auth/register', user, {
 			signal: controller.signal,
 		}),
 		controller,

@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const signUpSchema = z
 	.object({
-		name: z.string().min(1, 'El nombre no puede estar vacío').min(3, 'El nombre debe tener al menos 3 caracteres'),
+		username: z.string().min(1, 'El nombre no puede estar vacío').min(3, 'El nombre debe tener al menos 3 caracteres'),
 		email: z.string().email('El email no es valido'),
 		password: z
 			.string()

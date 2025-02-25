@@ -3,6 +3,11 @@ import { FormContainer } from '@components/Form/FormContainer';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { signUpSchema, FormSignUpData } from '@schemas/signForm';
+import { useApi } from '@hooks/useApi';
+import { registerUser } from '@services/api';
+import { useAuthContext } from '@hooks/Context/AuthContext';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const SignUp = () => {
 	const {
@@ -13,22 +18,33 @@ export const SignUp = () => {
 		resolver: zodResolver(signUpSchema),
 		mode: 'onBlur',
 		defaultValues: {
-			name: '',
+			username: '',
 			email: '',
 			password: '',
 			confirmPassword: '',
 		},
 	});
+	const navigate = useNavigate();
+
+	const { loading, error, data, fetch } = useApi(registerUser);
+	const { setIsAuthenticated } = useAuthContext();
 
 	const onSubmit: SubmitHandler<FormSignUpData> = (data) => {
-		console.log(data);
+		fetch(data);
 	};
+
+	useEffect(() => {
+		if (data) {
+			setIsAuthenticated(true);
+			navigate('/app');
+		}
+	}, [data, navigate, setIsAuthenticated]);
 
 	return (
 		<div className="grid place-items-center h-screen">
 			<FormContainer title="Registro">
 				<form onSubmit={handleSubmit(onSubmit)} className="form">
-					<Input name="name" type="text" placeholder="Nombre" control={control} error={errors.name} />
+					<Input name="username" type="text" placeholder="Nombre" control={control} error={errors.username} />
 					<Input name="email" type="email" placeholder="Email" control={control} error={errors.email} />
 					<Input
 						name="password"
@@ -44,8 +60,13 @@ export const SignUp = () => {
 						control={control}
 						error={errors.confirmPassword}
 					/>
-					<button type="submit" className="btn-secondary-blue text-zinc-50 dark:btn-secondary-yellow">
-						Registrarse
+					<button
+						type="submit"
+						className={`btn-secondary-blue text-zinc-50 dark:btn-secondary-yellow ${
+							loading ? 'cursor-not-allowed' : ''
+						}`}
+					>
+						{loading ? 'Cargando...' : 'Registrarse'}
 					</button>
 				</form>
 				<p className="text-sm text-zinc-600 dark:text-zinc-300">
@@ -54,6 +75,7 @@ export const SignUp = () => {
 						Inicia sesión
 					</a>
 				</p>
+				{error && <p className="text-sm text-red-500 dark:text-red-300">{error.message}</p>}
 			</FormContainer>
 		</div>
 	);

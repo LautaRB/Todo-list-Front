@@ -14,7 +14,7 @@ export const Tasks = () => {
 		try {
 			await addUserTask({ title: newTaskTitle });
 			setNewTaskTitle('');
-			fetch(undefined);
+			setTimeout(() => fetch(undefined), 400);
 		} catch (err) {
 			console.error('Error adding task:', err);
 		}
@@ -23,7 +23,7 @@ export const Tasks = () => {
 	const handleToggleTask = async (taskId: string, completed: boolean) => {
 		try {
 			await updateUserTask(taskId, { status: completed ? 'Terminado' : 'Pendiente' });
-			fetch(undefined);
+			setTimeout(() => fetch(undefined), 400);
 		} catch (err) {
 			console.error('Error updating task:', err);
 		}
