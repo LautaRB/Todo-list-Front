@@ -40,7 +40,11 @@ export const SignIn = () => {
 	useEffect(() => {
 		if (data) {
 			setIsAuthenticated(true);
-			navigate('/app');
+			if(data.role === 'admin') {
+				navigate('/app/admin');
+			} else {
+				navigate('/app');
+			}
 		}
 	}, [data, navigate, setIsAuthenticated]);
 

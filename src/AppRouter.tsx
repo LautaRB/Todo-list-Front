@@ -8,6 +8,7 @@ import { Sign as SignLayout } from '@layouts/Sign';
 import { TodoApp as TodoAppLayout } from '@layouts/TodoApp';
 import { TodoApp as TodoAppPage } from '@pages/Private/TodoApp';
 import { Profile as ProfilePage } from '@pages/Private/Profile';
+import { Admin as AdminPage } from '@pages/Private/Admin';
 import { Tasks as TasksPage } from '@pages/Private/Tasks';
 import { PrivateGuard } from './Guard/PrivateGuard';
 
@@ -65,6 +66,14 @@ export const AppRouter = () => {
 						}
 					/>
 				</Route>
+				<Route
+					path="/app/admin"
+					element={
+						<TodoAppLayout>
+							<AdminPage />
+						</TodoAppLayout>
+					}
+				/>
 			</RoutesWithNotFound>
 		</BrowserRouter>
 	);
